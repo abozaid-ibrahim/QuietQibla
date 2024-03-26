@@ -24,6 +24,7 @@ final class UserDefaultsLocationRepositoryTests: XCTestCase {
         repository = nil
         super.tearDown()
     }
+    
     func testSaveAndRetrieveLocations() {
         let location1 = MosqueItem(name: "Mosque 1", latitude: 37.7749, longitude: -122.4194)
         let location2 = MosqueItem(name: "Mosque 2", latitude: 37.773, longitude: -122.42)

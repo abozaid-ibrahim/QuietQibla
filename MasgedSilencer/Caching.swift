@@ -31,10 +31,11 @@ protocol LocationRepository {
     func deleteAllLocations()
 }
 
+// TODO: should be changed, very slow not scalable.
 class UserDefaultsLocationRepository: LocationRepository {
     private let key = "locationsArray"
     private let defaults = UserDefaults.standard
-    
+
     func fetchAll() -> [MosqueItem] {
         guard let data = defaults.data(forKey: key) else { return [] }
         let decoder = PropertyListDecoder()
@@ -63,7 +64,6 @@ class UserDefaultsLocationRepository: LocationRepository {
         defaults.removeObject(forKey: key)
     }
 }
-
 
 // class CoreDataLocationRepository: ObservableObject {
 //    private let context = CoreDataStack.shared.managedObjectContext
