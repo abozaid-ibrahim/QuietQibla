@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MasgedSilencerApp: App {
+    let router = Router()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(router)
         }
     }
 }
+

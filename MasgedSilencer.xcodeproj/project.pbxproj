@@ -14,6 +14,7 @@
 		6CAD44122BB278BA00DB57D1 /* MasgedSilencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44112BB278BA00DB57D1 /* MasgedSilencerTests.swift */; };
 		6CAD441C2BB278BA00DB57D1 /* MasgedSilencerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD441B2BB278BA00DB57D1 /* MasgedSilencerUITests.swift */; };
 		6CAD441E2BB278BA00DB57D1 /* MasgedSilencerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD441D2BB278BA00DB57D1 /* MasgedSilencerUITestsLaunchTests.swift */; };
+		6CDD03CD2BB2926D0084661C /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD03CC2BB2926D0084661C /* Caching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		6CAD44172BB278BA00DB57D1 /* MasgedSilencerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasgedSilencerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD441B2BB278BA00DB57D1 /* MasgedSilencerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasgedSilencerUITests.swift; sourceTree = "<group>"; };
 		6CAD441D2BB278BA00DB57D1 /* MasgedSilencerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasgedSilencerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6CDD03CC2BB2926D0084661C /* Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				6CAD44022BB278B800DB57D1 /* ContentView.swift */,
 				6CAD44042BB278BA00DB57D1 /* Assets.xcassets */,
 				6CAD44062BB278BA00DB57D1 /* Preview Content */,
+				6CDD03CC2BB2926D0084661C /* Caching.swift */,
 			);
 			path = MasgedSilencer;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDD03CD2BB2926D0084661C /* Caching.swift in Sources */,
 				6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */,
 				6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */,
 			);
@@ -347,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -422,8 +426,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MasgedSilencer/Preview Content\"";
+				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,8 +457,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MasgedSilencer/Preview Content\"";
+				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
