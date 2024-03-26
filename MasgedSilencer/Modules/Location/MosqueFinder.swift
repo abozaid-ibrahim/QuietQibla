@@ -12,7 +12,7 @@ final class MosqueFinder {
     let mosqueRadius: CLLocationDistance
     let locationRepository: LocationRepository
     private lazy var locations: [CLLocation] = locationRepository.fetchAll().map { CLLocation(latitude: $0.latitude, longitude: $0.longitude) }
-    init(mosqueRadius: CLLocationDistance = 150, locationRepository: LocationRepository = UserDefaultsLocationRepository()) {
+    init(mosqueRadius: CLLocationDistance = 150, locationRepository: LocationRepository = MadinatyMosqueRepo()) {
         self.mosqueRadius = mosqueRadius
         self.locationRepository = locationRepository
     }

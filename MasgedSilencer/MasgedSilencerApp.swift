@@ -15,6 +15,7 @@ struct MasgedSilencerApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(router)
+                .environment(\.locale, .init(identifier: "ar"))
         }
     }
 }

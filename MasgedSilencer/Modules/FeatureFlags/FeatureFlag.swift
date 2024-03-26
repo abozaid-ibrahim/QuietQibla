@@ -13,7 +13,7 @@ enum Feature: CaseIterable {
 }
 
 enum FeatureFlag {
-    private static var enabledFeatures: Set<Feature> = .init()
+    private static var enabledFeatures: Set<Feature> = .init(Feature.allCases)
     static func isEnabled(_ feature: Feature) -> Bool {
         return enabledFeatures.contains(feature)
     }

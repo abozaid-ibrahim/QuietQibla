@@ -18,6 +18,9 @@
 		6C8C27E32BB2A9D100B1E162 /* FeatureFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E22BB2A9D100B1E162 /* FeatureFlag.swift */; };
 		6C8C27E52BB2B29800B1E162 /* MosqueFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */; };
 		6C8C27E72BB2B31D00B1E162 /* MosqueFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */; };
+		6C8C27EA2BB2BEAD00B1E162 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E92BB2BEAD00B1E162 /* Localization.swift */; };
+		6C8C27EE2BB2C18100B1E162 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C27F02BB2C18100B1E162 /* Localizable.strings */; };
+		6C8C27F32BB2F5FD00B1E162 /* madinaty_mosques.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */; };
 		6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */; };
 		6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* ContentView.swift */; };
 		6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44042BB278BA00DB57D1 /* Assets.xcassets */; };
@@ -59,6 +62,10 @@
 		6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueFinder.swift; sourceTree = "<group>"; };
 		6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueFinderTests.swift; sourceTree = "<group>"; };
 		6C8C27E82BB2B96C00B1E162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6C8C27E92BB2BEAD00B1E162 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		6C8C27EF2BB2C18100B1E162 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C8C27F12BB2C18200B1E162 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = madinaty_mosques.json; sourceTree = "<group>"; };
 		6CAD43FD2BB278B800DB57D1 /* MasgedSilencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasgedSilencer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasgedSilencerApp.swift; sourceTree = "<group>"; };
 		6CAD44022BB278B800DB57D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +108,7 @@
 		6C581E252BB2A4600095DE84 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6C8C27EB2BB2BFE400B1E162 /* Localization */,
 				6C8C27E12BB2A9C500B1E162 /* FeatureFlags */,
 				6C581E292BB2A4850095DE84 /* Caching */,
 				6C581E282BB2A47E0095DE84 /* Device */,
@@ -125,6 +133,7 @@
 				6C581E172BB2A33A0095DE84 /* LocationListener.swift */,
 				6C581E192BB2A3500095DE84 /* LocationManager.swift */,
 				6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */,
+				6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -149,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				6CAD44022BB278B800DB57D1 /* ContentView.swift */,
+				6C8C27E92BB2BEAD00B1E162 /* Localization.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -176,6 +186,14 @@
 				6C8C27E22BB2A9D100B1E162 /* FeatureFlag.swift */,
 			);
 			path = FeatureFlags;
+			sourceTree = "<group>";
+		};
+		6C8C27EB2BB2BFE400B1E162 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				6C8C27F02BB2C18100B1E162 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		6CAD43F42BB278B800DB57D1 = {
@@ -326,6 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 6CAD43F42BB278B800DB57D1;
 			productRefGroup = 6CAD43FE2BB278B800DB57D1 /* Products */;
@@ -344,7 +363,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C8C27F32BB2F5FD00B1E162 /* madinaty_mosques.json in Resources */,
 				6CAD44082BB278BA00DB57D1 /* Preview Assets.xcassets in Resources */,
+				6C8C27EE2BB2C18100B1E162 /* Localizable.strings in Resources */,
 				6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +393,7 @@
 			files = (
 				6C581E202BB2A39D0095DE84 /* MapScreen.swift in Sources */,
 				6CDD03CD2BB2926D0084661C /* Caching.swift in Sources */,
+				6C8C27EA2BB2BEAD00B1E162 /* Localization.swift in Sources */,
 				6C581E222BB2A3B30095DE84 /* Router.swift in Sources */,
 				6C581E1E2BB2A37E0095DE84 /* MapView.swift in Sources */,
 				6C581E162BB2A3130095DE84 /* ModeChanger.swift in Sources */,
@@ -419,6 +441,18 @@
 			targetProxy = 6CAD44182BB278BA00DB57D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C8C27F02BB2C18100B1E162 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C8C27EF2BB2C18100B1E162 /* en */,
+				6C8C27F12BB2C18200B1E162 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6CAD441F2BB278BA00DB57D1 /* Debug */ = {

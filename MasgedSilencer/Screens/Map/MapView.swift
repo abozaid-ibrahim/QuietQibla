@@ -32,7 +32,7 @@ struct MapView: View {
             let latitude = region.center.latitude - Double(tapYFromCenter) * latitudePerPixel
             tappedLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             selectedLocation = tappedLocation
-            annotationCoordinate = .init(latitude: tappedLocation!.latitude, longitude: tappedLocation!.longitude)
+            annotationCoordinate = .init(name: "مسجد", latitude: tappedLocation!.latitude, longitude: tappedLocation!.longitude)
             showDoneButton = true
         }
     }

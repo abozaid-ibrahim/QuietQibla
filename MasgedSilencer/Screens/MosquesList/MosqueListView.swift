@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MosqueListView: View {
-    let locations: [MosqueItem] = UserDefaultsLocationRepository().fetchAll()
+    let locations: [MosqueItem] = MadinatyMosqueRepo().fetchAll()
     var body: some View {
         VStack {
             List(locations, id: \.id) { mosque in

@@ -9,7 +9,7 @@ import Foundation
 
 struct MosqueItem: Identifiable, Codable {
     let id = UUID()
-    var name: String = "Osama bin Zaid"
-    var latitude: Double
-    var longitude: Double
+    let name: String
+    let latitude: Double
+    let longitude: Double
 }

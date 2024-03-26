@@ -3,4 +3,102 @@
    uuid = "210C4AB3-DF96-4CBD-B4B1-A21599F5E63D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E33788A7-78AF-40FF-A02E-13D3B8499533"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MasgedSilencer/Modules/Caching/Caching.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "fetchAll()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E33788A7-78AF-40FF-A02E-13D3B8499533 - 297339a3915df3a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MasgedSilencer.MadinatyMosqueRepo.fetchAll() -&gt; Swift.Array&lt;MasgedSilencer.MosqueItem&gt;"
+                  moduleName = "MasgedSilencer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abuzeid/workspace/MasgedSilencer/MasgedSilencer/Modules/Caching/Caching.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+               <Location
+                  uuid = "E33788A7-78AF-40FF-A02E-13D3B8499533 - 297339a3915df3a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MasgedSilencer.MadinatyMosqueRepo.fetchAll() -&gt; Swift.Array&lt;MasgedSilencer.MosqueItem&gt;"
+                  moduleName = "MasgedSilencer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abuzeid/workspace/MasgedSilencer/MasgedSilencer/Modules/Caching/Caching.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B556E529-281F-43F7-AD07-A3A64585A072"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MasgedSilencer/Modules/Caching/Caching.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetchAll()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B556E529-281F-43F7-AD07-A3A64585A072 - 297339a3915df2a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MasgedSilencer.MadinatyMosqueRepo.fetchAll() -&gt; Swift.Array&lt;MasgedSilencer.MosqueItem&gt;"
+                  moduleName = "MasgedSilencer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abuzeid/workspace/MasgedSilencer/MasgedSilencer/Modules/Caching/Caching.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "1660">
+               </Location>
+               <Location
+                  uuid = "B556E529-281F-43F7-AD07-A3A64585A072 - 297339a3915df2a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MasgedSilencer.MadinatyMosqueRepo.fetchAll() -&gt; Swift.Array&lt;MasgedSilencer.MosqueItem&gt;"
+                  moduleName = "MasgedSilencer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abuzeid/workspace/MasgedSilencer/MasgedSilencer/Modules/Caching/Caching.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "1692">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

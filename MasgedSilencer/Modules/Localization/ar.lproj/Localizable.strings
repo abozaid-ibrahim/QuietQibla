@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MasgedSilencer
+
+  Created by abuzeid on 26.03.24.
+  
+*/
+"home.screen.aya" = "قَدْ أَفْلَحَ الْمُؤْمِنُونَ ۝ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ";
+"this.is.mosque" = "انت قريب من المسجد";
+"this.is.not.mosque" = "انت خارج المسجد الان";
+"looking.for.your.location" = "جارى تحديد موقعك";
+"current_location" = " %@ موقعك";

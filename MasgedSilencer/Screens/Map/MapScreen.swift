@@ -17,7 +17,7 @@ struct MapScreen: View {
     @State private var showDoneButton = false
     @ObservedObject var location = LocationManager()
     @State private var region = MKCoordinateRegion()
-    let repo: LocationRepository = UserDefaultsLocationRepository()
+    let repo: LocationRepository = MadinatyMosqueRepo()
     var body: some View {
         VStack {
             MapView(region: $region, tappedLocation: $tappedLocation, selectedLocation: $selectedLocation, showDoneButton: $showDoneButton)
@@ -27,7 +27,7 @@ struct MapScreen: View {
             if showDoneButton {
                 Button("Done") {
                     if let location = selectedLocation {
-                        repo.addLocation(MosqueItem(latitude: location.latitude, longitude: location.longitude))
+                        repo.addLocation(MosqueItem(name: "مسجد", latitude: location.latitude, longitude: location.longitude))
                     }
                     router.path.removeLast()
                 }

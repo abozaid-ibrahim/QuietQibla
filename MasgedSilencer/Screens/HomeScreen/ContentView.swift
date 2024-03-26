@@ -20,17 +20,18 @@ struct ContentView: View {
             VStack {
                 HStack {
                     Spacer()
-                    Text("Current Location:")
+                    Text(Localization.Home.currentLocation.key)
                     if let loc = locationManager.currentLocation {
                         Text("\(loc.coordinate.latitude), \(loc.coordinate.longitude)")
                     } else {
-                        Text("Waiting for location...")
+                        Text(Localization.Home.lookingForLocation.key)
                     }
                     Spacer()
                 }
                 Spacer()
-                Text("قَدْ أَفْلَحَ الْمُؤْمِنُونَ ۝ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ")
+                Text(Localization.Home.home_aya.key)
                     .font(.largeTitle)
+                    .padding()
                 if FeatureFlag.isEnabled(.addNewMosque) {
                     Spacer()
                     Button("Add New Mosque") {
@@ -44,7 +45,7 @@ struct ContentView: View {
                     }
                 }
                 Spacer()
-                Text(locationListener.isCurrentLocationMosque ? "This is a mosque" : "You are far away from the mosque")
+                Text(locationListener.isCurrentLocationMosque ? Localization.Home.thisIsMosque.key : Localization.Home.thisIsNotAmosque.key)
             }
             .background(locationListener.isCurrentLocationMosque ? Color.green : Color(UIColor.lightGray))
             .navigationDestination(for: Screen.self) { screen in
