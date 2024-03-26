@@ -16,6 +16,8 @@
 		6C581E222BB2A3B30095DE84 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E212BB2A3B30095DE84 /* Router.swift */; };
 		6C581E242BB2A3C20095DE84 /* MosqueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E232BB2A3C20095DE84 /* MosqueListView.swift */; };
 		6C8C27E32BB2A9D100B1E162 /* FeatureFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E22BB2A9D100B1E162 /* FeatureFlag.swift */; };
+		6C8C27E52BB2B29800B1E162 /* MosqueFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */; };
+		6C8C27E72BB2B31D00B1E162 /* MosqueFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */; };
 		6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */; };
 		6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* ContentView.swift */; };
 		6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44042BB278BA00DB57D1 /* Assets.xcassets */; };
@@ -54,6 +56,9 @@
 		6C581E212BB2A3B30095DE84 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		6C581E232BB2A3C20095DE84 /* MosqueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueListView.swift; sourceTree = "<group>"; };
 		6C8C27E22BB2A9D100B1E162 /* FeatureFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlag.swift; sourceTree = "<group>"; };
+		6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueFinder.swift; sourceTree = "<group>"; };
+		6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueFinderTests.swift; sourceTree = "<group>"; };
+		6C8C27E82BB2B96C00B1E162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6CAD43FD2BB278B800DB57D1 /* MasgedSilencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasgedSilencer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasgedSilencerApp.swift; sourceTree = "<group>"; };
 		6CAD44022BB278B800DB57D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 			children = (
 				6C581E172BB2A33A0095DE84 /* LocationListener.swift */,
 				6C581E192BB2A3500095DE84 /* LocationManager.swift */,
+				6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 		6CAD43FF2BB278B800DB57D1 /* MasgedSilencer */ = {
 			isa = PBXGroup;
 			children = (
+				6C8C27E82BB2B96C00B1E162 /* Info.plist */,
 				6C581E262BB2A4650095DE84 /* Screens */,
 				6C581E252BB2A4600095DE84 /* Modules */,
 				6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */,
@@ -219,6 +226,7 @@
 			children = (
 				6CAD44112BB278BA00DB57D1 /* MasgedSilencerTests.swift */,
 				6CDD03CE2BB298BE0084661C /* CachingTests.swift */,
+				6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */,
 			);
 			path = MasgedSilencerTests;
 			sourceTree = "<group>";
@@ -374,6 +382,7 @@
 				6C581E1C2BB2A36E0095DE84 /* MosqueItem.swift in Sources */,
 				6C8C27E32BB2A9D100B1E162 /* FeatureFlag.swift in Sources */,
 				6C581E242BB2A3C20095DE84 /* MosqueListView.swift in Sources */,
+				6C8C27E52BB2B29800B1E162 /* MosqueFinder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C8C27E72BB2B31D00B1E162 /* MosqueFinderTests.swift in Sources */,
 				6CAD44122BB278BA00DB57D1 /* MasgedSilencerTests.swift in Sources */,
 				6CDD03CF2BB298BE0084661C /* CachingTests.swift in Sources */,
 			);
@@ -541,6 +551,7 @@
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MasgedSilencer/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -572,6 +583,7 @@
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MasgedSilencer/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

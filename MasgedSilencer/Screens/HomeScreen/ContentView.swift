@@ -19,14 +19,18 @@ struct ContentView: View {
         NavigationStack(path: $router.path) {
             VStack {
                 HStack {
+                    Spacer()
                     Text("Current Location:")
                     if let loc = locationManager.currentLocation {
                         Text("\(loc.coordinate.latitude), \(loc.coordinate.longitude)")
                     } else {
                         Text("Waiting for location...")
                     }
+                    Spacer()
                 }
-
+                Spacer()
+                Text("قَدْ أَفْلَحَ الْمُؤْمِنُونَ ۝ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ")
+                    .font(.largeTitle)
                 if FeatureFlag.isEnabled(.addNewMosque) {
                     Spacer()
                     Button("Add New Mosque") {
@@ -40,14 +44,9 @@ struct ContentView: View {
                     }
                 }
                 Spacer()
-
                 Text(locationListener.isCurrentLocationMosque ? "This is a mosque" : "You are far away from the mosque")
             }
-//            .edgesIgnoringSafeArea(.all)
-
             .background(locationListener.isCurrentLocationMosque ? Color.green : Color(UIColor.lightGray))
-//            .edgesIgnoringSafeArea(.all)
-
             .navigationDestination(for: Screen.self) { screen in
                 switch screen {
                 case .mapScreen:
@@ -59,8 +58,6 @@ struct ContentView: View {
         }
     }
 }
-
-var mosqueRadius: CLLocationDistance = 200
 
 #Preview {
     ContentView()

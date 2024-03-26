@@ -13,7 +13,18 @@ protocol ModeChanger {
     func shouldDisableFocusMode()
 }
 
+/// make sure I didnt miss with other apps change the mode
+final class ModeChangerWatcher {
+    var modeChanged: Bool = UserDefaults.standard.bool(forKey: "Mode_Changed_by_PhoneSilencerAtMosque")
+    // Make sure mode changed by our app, and not other apps
+    func changeMode(_ changed: Bool) {
+        UserDefaults.standard.setValue(changed, forKey: "Mode_Changed_by_PhoneSilencerAtMosque")
+        UserDefaults.standard.synchronize()
+    }
+}
+
 final class SilentModeChanger: ModeChanger {
+    let watcher = ModeChangerWatcher()
     private var isFocusModeEnabled = false
 
     func shouldEnableFocusMode() {
@@ -27,13 +38,14 @@ final class SilentModeChanger: ModeChanger {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: .duckOthers)
             isFocusModeEnabled = true
+            watcher.changeMode(true)
         } catch {
             print("Failed to enable focus mode: \(error.localizedDescription)")
         }
     }
 
     func shouldDisableFocusMode() {
-        guard isFocusModeEnabled else { return }
+        guard isFocusModeEnabled, watcher.modeChanged else { return }
 
         disableFocusMode()
     }
@@ -44,6 +56,7 @@ final class SilentModeChanger: ModeChanger {
         do {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [])
             isFocusModeEnabled = false
+            watcher.changeMode(false)
         } catch {
             print("Failed to disable focus mode: \(error.localizedDescription)")
         }
