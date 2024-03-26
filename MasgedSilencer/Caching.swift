@@ -32,25 +32,38 @@ protocol LocationRepository {
 }
 
 class UserDefaultsLocationRepository: LocationRepository {
-    let key = "locationsArrray"
-    let current = UserDefaults.standard
+    private let key = "locationsArray"
+    private let defaults = UserDefaults.standard
+    
     func fetchAll() -> [MosqueItem] {
-        guard let mosque = current.array(forKey: key),
-              let array = mosque as? [MosqueItem] else { return [] }
-        return array
+        guard let data = defaults.data(forKey: key) else { return [] }
+        let decoder = PropertyListDecoder()
+        do {
+            let locations = try decoder.decode([MosqueItem].self, from: data)
+            return locations
+        } catch {
+            print("Error decoding locations: \(error.localizedDescription)")
+            return []
+        }
     }
 
     func addLocation(_ location: MosqueItem) {
-        var cached = fetchAll()
-        cached.append(location)
-        current.set(cached, forKey: key)
-        current.synchronize()
+        var locations = fetchAll()
+        locations.append(location)
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(locations)
+            defaults.set(data, forKey: key)
+        } catch {
+            print("Error encoding locations: \(error.localizedDescription)")
+        }
     }
 
     func deleteAllLocations() {
-        current.set(nil, forKey: key)
+        defaults.removeObject(forKey: key)
     }
 }
+
 
 // class CoreDataLocationRepository: ObservableObject {
 //    private let context = CoreDataStack.shared.managedObjectContext

@@ -13,11 +13,11 @@ import UIKit
 
 //
 struct MosqueListView: View {
-    let locations: [MosqueItem] =  UserDefaultsLocationRepository().fetchAll()
+    let locations: [MosqueItem] = UserDefaultsLocationRepository().fetchAll()
     var body: some View {
         VStack {
             List(locations, id: \.id) { location in
-                Text("\(location.location.description)")
+                Text("\(location.latitude)")
             }
 
             Text("Silencer Location Count: \(locations.count)")
@@ -84,7 +84,7 @@ struct MapScreen: View {
             if showDoneButton {
                 Button("Done") {
                     if let location = selectedLocation {
-                        repo.addLocation(MosqueItem(location: CLLocation(latitude: location.latitude, longitude: location.longitude)))
+                        repo.addLocation(MosqueItem(latitude: location.latitude, longitude: location.longitude))
                     }
                     router.path.removeLast()
                 }
@@ -107,10 +107,10 @@ struct MapView: View {
     @Binding var selectedLocation: CLLocationCoordinate2D?
     @Binding var showDoneButton: Bool
     @State private var annotationCoordinate: MosqueItem?
-    
+
     var body: some View {
         Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: [annotationCoordinate].compactMap { $0 }) { coordinate in
-            MapMarker(coordinate: coordinate.location.coordinate, tint: .red)
+            MapMarker(coordinate: .init(latitude: coordinate.latitude, longitude: coordinate.longitude), tint: .red)
         }
         .edgesIgnoringSafeArea(.all)
         .onTapGesture { tap in
@@ -124,19 +124,20 @@ struct MapView: View {
             let latitude = region.center.latitude - Double(tapYFromCenter) * latitudePerPixel
             tappedLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             selectedLocation = tappedLocation
-            annotationCoordinate = .init(location: .init(latitude: tappedLocation!.latitude, longitude: tappedLocation!.longitude))
+            annotationCoordinate = .init(latitude: tappedLocation!.latitude, longitude: tappedLocation!.longitude)
             showDoneButton = true
         }
     }
 }
 
-struct MosqueItem: Identifiable {
+struct MosqueItem: Identifiable, Codable {
     let id = UUID()
-    let masgadName: String = "Osama bin Zaid"
-    let location: CLLocation
+    var name: String = "Osama bin Zaid"
+    var latitude: Double
+    var longitude: Double
 }
 
-//class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+// class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 //    private let locationManager = CLLocationManager()
 //    @Published var locations: [MosqueItem] = []
 //    @Published var region = MKCoordinateRegion()
@@ -200,7 +201,7 @@ struct MosqueItem: Identifiable {
 //            print("Failed to disable focus mode: \(error.localizedDescription)")
 //        }
 //    }
-//}
+// }
 
 #Preview {
     ContentView()
@@ -250,6 +251,7 @@ extension MKMapView {
         return coordinate
     }
 }
+
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     @Published var region = MKCoordinateRegion()
@@ -267,7 +269,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 
-        for savedLocation in locationRepository.fetchAll().map{$0.location} {
+        for savedLocation in locationRepository.fetchAll().map { CLLocation(latitude: $0.latitude, longitude: $0.longitude) } {
             let distance = location.distance(from: savedLocation)
             if distance < 100 { // Change 100 to your desired radius in meters
                 shouldEnableFocusMode()
