@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
 struct MosqueListView: View {
     let locations: [MosqueItem] = UserDefaultsLocationRepository().fetchAll()
     var body: some View {

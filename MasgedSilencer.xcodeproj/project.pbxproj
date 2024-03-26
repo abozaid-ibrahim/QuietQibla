@@ -91,6 +91,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C581E252BB2A4600095DE84 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6C581E292BB2A4850095DE84 /* Caching */,
+				6C581E282BB2A47E0095DE84 /* Device */,
+				6C581E272BB2A4720095DE84 /* Location */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6C581E262BB2A4650095DE84 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6C581E2D2BB2A4B00095DE84 /* MosquesList */,
+				6C581E2C2BB2A4AD0095DE84 /* Map */,
+				6C581E2B2BB2A4A80095DE84 /* HomeScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6C581E272BB2A4720095DE84 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				6C581E172BB2A33A0095DE84 /* LocationListener.swift */,
+				6C581E192BB2A3500095DE84 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		6C581E282BB2A47E0095DE84 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				6C581E152BB2A3130095DE84 /* ModeChanger.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		6C581E292BB2A4850095DE84 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD03CC2BB2926D0084661C /* Caching.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		6C581E2B2BB2A4A80095DE84 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6CAD44022BB278B800DB57D1 /* ContentView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		6C581E2C2BB2A4AD0095DE84 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				6C581E1D2BB2A37E0095DE84 /* MapView.swift */,
+				6C581E1F2BB2A39D0095DE84 /* MapScreen.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		6C581E2D2BB2A4B00095DE84 /* MosquesList */ = {
+			isa = PBXGroup;
+			children = (
+				6C581E232BB2A3C20095DE84 /* MosqueListView.swift */,
+			);
+			path = MosquesList;
+			sourceTree = "<group>";
+		};
 		6CAD43F42BB278B800DB57D1 = {
 			isa = PBXGroup;
 			children = (
@@ -114,19 +184,13 @@
 		6CAD43FF2BB278B800DB57D1 /* MasgedSilencer */ = {
 			isa = PBXGroup;
 			children = (
+				6C581E262BB2A4650095DE84 /* Screens */,
+				6C581E252BB2A4600095DE84 /* Modules */,
 				6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */,
-				6CAD44022BB278B800DB57D1 /* ContentView.swift */,
 				6CAD44042BB278BA00DB57D1 /* Assets.xcassets */,
 				6CAD44062BB278BA00DB57D1 /* Preview Content */,
-				6CDD03CC2BB2926D0084661C /* Caching.swift */,
-				6C581E152BB2A3130095DE84 /* ModeChanger.swift */,
-				6C581E172BB2A33A0095DE84 /* LocationListener.swift */,
-				6C581E192BB2A3500095DE84 /* LocationManager.swift */,
 				6C581E1B2BB2A36E0095DE84 /* MosqueItem.swift */,
-				6C581E1D2BB2A37E0095DE84 /* MapView.swift */,
-				6C581E1F2BB2A39D0095DE84 /* MapScreen.swift */,
 				6C581E212BB2A3B30095DE84 /* Router.swift */,
-				6C581E232BB2A3C20095DE84 /* MosqueListView.swift */,
 			);
 			path = MasgedSilencer;
 			sourceTree = "<group>";

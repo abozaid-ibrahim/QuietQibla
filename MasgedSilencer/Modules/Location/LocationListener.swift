@@ -26,7 +26,7 @@ class LocationListener: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 
-        for savedLocation in locationRepository.fetchAll().map { CLLocation(latitude: $0.latitude, longitude: $0.longitude) } {
+        for savedLocation in locationRepository.fetchAll().map({ CLLocation(latitude: $0.latitude, longitude: $0.longitude) }) {
             let distance = location.distance(from: savedLocation)
             if distance < mosqueRadius { // Change 100 to your desired radius in meters
                 mode.shouldEnableFocusMode()
