@@ -8,23 +8,50 @@
 import CoreLocation
 import Foundation
 
+struct LocationUpdate {
+    let isCurrentLocationMosque: Bool
+    private let createdAt = Date()
+    var lastUpdated: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMM d, yyyy 'at' h:mm a"
+        return formatter.string(from: createdAt)
+    }
+}
+
 final class MosqueFinder {
-    let mosqueRadius: CLLocationDistance
-    let locationRepository: LocationRepository
-    private lazy var locations: [CLLocation] = locationRepository.fetchAll().map { CLLocation(latitude: $0.latitude, longitude: $0.longitude) }
-    init(mosqueRadius: CLLocationDistance = 150, locationRepository: LocationRepository = MadinatyMosqueRepo()) {
+    private let mosqueRadius: CLLocationDistance
+    private let locationRepository: LocationRepository
+    private let notifier = LocalNotification()
+    private let mode: ModeChanger = SilentModeChanger()
+    private lazy var locations: [MosqueItem] = locationRepository.fetchAll()
+    var locationUpdate:LocationUpdate?
+    init(mosqueRadius: CLLocationDistance,
+         locationRepository: LocationRepository = MadinatyMosqueRepo())
+    {
         self.mosqueRadius = mosqueRadius
         self.locationRepository = locationRepository
     }
 
     // TODO: This is very expensive method, where it has to check for every singl location
-    func isLocationInMosqueRadius(currentLocation: CLLocation) -> Bool {
-        for mosqueLocation in locations {
-            let distance = currentLocation.distance(from: mosqueLocation)
+    private func getMosqueOf(currentLocation: CLLocation) -> MosqueItem? {
+        for mosque in locations {
+            let distance = currentLocation.distance(from: CLLocation(latitude: mosque.latitude, longitude: mosque.longitude))
             if distance < mosqueRadius { // desired radius in meters
-                return true
+                return mosque
             }
         }
-        return false
+        return nil
+    }
+
+    func checkIfCurrentLocationIsMosque(_ location: CLLocation) {
+        guard let mosque = getMosqueOf(currentLocation: location) else {
+            mode.shouldDisableFocusMode()
+            notifier.sendNotification(notif: .init(title: "Khashe3", body: "SetFocus off"))
+            locationUpdate = LocationUpdate(isCurrentLocationMosque: false)
+            return
+        }
+        mode.shouldEnableFocusMode()
+        locationUpdate = LocationUpdate(isCurrentLocationMosque: true)
+        notifier.sendNotification(notif: .init(title: mosque.name, body: "SetFocus on"))
     }
 }

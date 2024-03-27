@@ -13,8 +13,9 @@ import UIKit
 
 struct ContentView: View {
     @EnvironmentObject var router: Router
-    private var locationListener = LocationListener()
     @ObservedObject var locationManager = LocationManager()
+    @State var viewModel = MainScreenViewModel()
+
     var body: some View {
         NavigationStack(path: $router.path) {
             VStack {
@@ -28,6 +29,8 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+                Text("Updated at \(viewModel.location?.lastUpdated ?? "")")
+
                 Spacer()
                 Text(Localization.Home.home_aya.key)
                     .font(.largeTitle)
@@ -45,9 +48,9 @@ struct ContentView: View {
                     }
                 }
                 Spacer()
-                Text(locationListener.isCurrentLocationMosque ? Localization.Home.thisIsMosque.key : Localization.Home.thisIsNotAmosque.key)
+                Text(viewModel.isMosque ? Localization.Home.thisIsMosque.key : Localization.Home.thisIsNotAmosque.key)
             }
-            .background(locationListener.isCurrentLocationMosque ? Color.green : Color(UIColor.lightGray))
+            .background(viewModel.isMosque ? Color.green : Color(UIColor.lightGray))
             .navigationDestination(for: Screen.self) { screen in
                 switch screen {
                 case .mapScreen:
@@ -57,6 +60,19 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear {
+            LocationListener.shared.start()
+        }
+    }
+}
+
+final class MainScreenViewModel {
+    var location: LocationUpdate? {
+        LocationListener.shared.mosqueFinder.locationUpdate
+    }
+
+    var isMosque: Bool {
+        location?.isCurrentLocationMosque ?? false
     }
 }
 

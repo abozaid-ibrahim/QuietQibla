@@ -9,8 +9,8 @@ import AVFoundation
 import Foundation
 
 protocol ModeChanger {
-    func shouldEnableFocusMode()
-    func shouldDisableFocusMode()
+    func shouldEnableFocusMode()->Bool
+    func shouldDisableFocusMode()->Bool
 }
 
 /// make sure I didnt miss with other apps change the mode
@@ -27,38 +27,42 @@ final class SilentModeChanger: ModeChanger {
     let watcher = ModeChangerWatcher()
     private var isFocusModeEnabled = false
 
-    func shouldEnableFocusMode() {
-        guard !isFocusModeEnabled else { return }
-        enableFocusMode()
+    func shouldEnableFocusMode()->Bool {
+        guard !isFocusModeEnabled else { return false }
+        return enableFocusMode()
     }
 
-    private func enableFocusMode() {
-        guard !isFocusModeEnabled else { return }
+    private func enableFocusMode()->Bool {
+        guard !isFocusModeEnabled else { return false }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: .duckOthers)
             isFocusModeEnabled = true
             watcher.changeMode(true)
+            return true
         } catch {
             print("Failed to enable focus mode: \(error.localizedDescription)")
+            return false
         }
     }
 
-    func shouldDisableFocusMode() {
-        guard isFocusModeEnabled, watcher.modeChanged else { return }
+    func shouldDisableFocusMode()->Bool {
+        guard isFocusModeEnabled, watcher.modeChanged else { return false }
 
-        disableFocusMode()
+        return disableFocusMode()
     }
 
-    private func disableFocusMode() {
-        guard isFocusModeEnabled else { return }
+    private func disableFocusMode()->Bool {
+        guard isFocusModeEnabled else { return false }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [])
             isFocusModeEnabled = false
             watcher.changeMode(false)
+            return true
         } catch {
             print("Failed to disable focus mode: \(error.localizedDescription)")
+            return false
         }
     }
 }

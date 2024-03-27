@@ -21,6 +21,7 @@
 		6C8C27EA2BB2BEAD00B1E162 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27E92BB2BEAD00B1E162 /* Localization.swift */; };
 		6C8C27EE2BB2C18100B1E162 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C27F02BB2C18100B1E162 /* Localizable.strings */; };
 		6C8C27F32BB2F5FD00B1E162 /* madinaty_mosques.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */; };
+		6C8C27F62BB2FC5A00B1E162 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27F52BB2FC5A00B1E162 /* LocalNotification.swift */; };
 		6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */; };
 		6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* ContentView.swift */; };
 		6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44042BB278BA00DB57D1 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		6C8C27EF2BB2C18100B1E162 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C8C27F12BB2C18200B1E162 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = madinaty_mosques.json; sourceTree = "<group>"; };
+		6C8C27F52BB2FC5A00B1E162 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		6CAD43FD2BB278B800DB57D1 /* MasgedSilencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasgedSilencer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasgedSilencerApp.swift; sourceTree = "<group>"; };
 		6CAD44022BB278B800DB57D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		6C581E252BB2A4600095DE84 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6C8C27F42BB2FC4D00B1E162 /* Notification */,
 				6C8C27EB2BB2BFE400B1E162 /* Localization */,
 				6C8C27E12BB2A9C500B1E162 /* FeatureFlags */,
 				6C581E292BB2A4850095DE84 /* Caching */,
@@ -194,6 +197,14 @@
 				6C8C27F02BB2C18100B1E162 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		6C8C27F42BB2FC4D00B1E162 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6C8C27F52BB2FC5A00B1E162 /* LocalNotification.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		6CAD43F42BB278B800DB57D1 = {
@@ -399,6 +410,7 @@
 				6C581E162BB2A3130095DE84 /* ModeChanger.swift in Sources */,
 				6C581E1A2BB2A3500095DE84 /* LocationManager.swift in Sources */,
 				6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */,
+				6C8C27F62BB2FC5A00B1E162 /* LocalNotification.swift in Sources */,
 				6C581E182BB2A33A0095DE84 /* LocationListener.swift in Sources */,
 				6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */,
 				6C581E1C2BB2A36E0095DE84 /* MosqueItem.swift in Sources */,
