@@ -24,6 +24,7 @@ struct MapView: View {
         { coordinate in
             MapMarker(coordinate: .init(latitude: coordinate.latitude, longitude: coordinate.longitude), tint: .red)
         }
+        .accessibilityAddTraits(.isButton)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture { tap in
             let mapViewSize = UIScreen.main.bounds.size

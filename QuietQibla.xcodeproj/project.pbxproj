@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C55FCD12BB624A8006C9020 /* LocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55FCD02BB624A8006C9020 /* LocationUpdate.swift */; };
 		6C581E162BB2A3130095DE84 /* ModeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E152BB2A3130095DE84 /* ModeChanger.swift */; };
 		6C581E182BB2A33A0095DE84 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E172BB2A33A0095DE84 /* LocationListener.swift */; };
 		6C581E1A2BB2A3500095DE84 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E192BB2A3500095DE84 /* LocationManager.swift */; };
@@ -38,7 +39,7 @@
 		6CAD44032BB278B800DB57D1 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* MainScreenView.swift */; };
 		6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44042BB278BA00DB57D1 /* Assets.xcassets */; };
 		6CAD44082BB278BA00DB57D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44072BB278BA00DB57D1 /* Preview Assets.xcassets */; };
-		6CAD44122BB278BA00DB57D1 /* QuietQiblaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44112BB278BA00DB57D1 /* QuietQiblaTests.swift */; };
+		6CAD44122BB278BA00DB57D1 /* PrayerTimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44112BB278BA00DB57D1 /* PrayerTimesTests.swift */; };
 		6CAD441C2BB278BA00DB57D1 /* QuietQiblaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD441B2BB278BA00DB57D1 /* QuietQiblaUITests.swift */; };
 		6CAD441E2BB278BA00DB57D1 /* QuietQiblaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD441D2BB278BA00DB57D1 /* QuietQiblaUITestsLaunchTests.swift */; };
 		6CDD03CD2BB2926D0084661C /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD03CC2BB2926D0084661C /* LocationRepository.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C55FCD02BB624A8006C9020 /* LocationUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUpdate.swift; sourceTree = "<group>"; };
 		6C581E152BB2A3130095DE84 /* ModeChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChanger.swift; sourceTree = "<group>"; };
 		6C581E172BB2A33A0095DE84 /* LocationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
 		6C581E192BB2A3500095DE84 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 		6CAD44042BB278BA00DB57D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CAD44072BB278BA00DB57D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6CAD440D2BB278BA00DB57D1 /* QuietQiblaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuietQiblaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CAD44112BB278BA00DB57D1 /* QuietQiblaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietQiblaTests.swift; sourceTree = "<group>"; };
+		6CAD44112BB278BA00DB57D1 /* PrayerTimesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesTests.swift; sourceTree = "<group>"; };
 		6CAD44172BB278BA00DB57D1 /* QuietQiblaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuietQiblaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD441B2BB278BA00DB57D1 /* QuietQiblaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietQiblaUITests.swift; sourceTree = "<group>"; };
 		6CAD441D2BB278BA00DB57D1 /* QuietQiblaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietQiblaUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				6C581E172BB2A33A0095DE84 /* LocationListener.swift */,
 				6C581E192BB2A3500095DE84 /* LocationManager.swift */,
 				6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */,
+				6C55FCD02BB624A8006C9020 /* LocationUpdate.swift */,
 				6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */,
 			);
 			path = Location;
@@ -321,7 +324,7 @@
 		6CAD44102BB278BA00DB57D1 /* QuietQiblaTests */ = {
 			isa = PBXGroup;
 			children = (
-				6CAD44112BB278BA00DB57D1 /* QuietQiblaTests.swift */,
+				6CAD44112BB278BA00DB57D1 /* PrayerTimesTests.swift */,
 				6CDD03CE2BB298BE0084661C /* CachingTests.swift */,
 				6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */,
 			);
@@ -521,6 +524,7 @@
 				6C581E242BB2A3C20095DE84 /* MosqueListView.swift in Sources */,
 				6C8C27E52BB2B29800B1E162 /* MosqueFinder.swift in Sources */,
 				6C8C28062BB5279800B1E162 /* DontDisturbToggler.swift in Sources */,
+				6C55FCD12BB624A8006C9020 /* LocationUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C8C27E72BB2B31D00B1E162 /* MosqueFinderTests.swift in Sources */,
-				6CAD44122BB278BA00DB57D1 /* QuietQiblaTests.swift in Sources */,
+				6CAD44122BB278BA00DB57D1 /* PrayerTimesTests.swift in Sources */,
 				6CDD03CF2BB298BE0084661C /* CachingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

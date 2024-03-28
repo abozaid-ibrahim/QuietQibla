@@ -8,17 +8,9 @@
 import CoreLocation
 import Foundation
 
-struct LocationUpdate {
-    let isCurrentLocationMosque: Bool
-    private let createdAt = Date()
-    var lastUpdated: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMM d, yyyy 'at' h:mm a"
-        return formatter.string(from: createdAt)
-    }
-}
+protocol MosqueFinder {}
 
-final class MosqueFinder {
+final class LocationMosqueFinder: MosqueFinder {
     private let mosqueRadius: CLLocationDistance
     private let locationRepository: LocationRepository
     private let notifier = LocalNotification()
@@ -34,7 +26,7 @@ final class MosqueFinder {
     }
 
     // TODO: This is very expensive method, where it has to check for every singl location
-    private func getMosqueOf(currentLocation: CLLocation) -> MosqueItem? {
+    func getMosqueOf(currentLocation: CLLocation) -> MosqueItem? {
         for mosque in locations {
             let distance = currentLocation.distance(from: CLLocation(latitude: mosque.latitude, longitude: mosque.longitude))
             if distance < mosqueRadius { // desired radius in meters
