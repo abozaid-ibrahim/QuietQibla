@@ -42,7 +42,8 @@ Used both [SwiftLint](https://github.com/realm/SwiftLint), [SwiftFormat](https:/
 * Modules: Include separate modules, components, extensions, ...etc.
 * Scenes: Group of app UI screens.
 
-
+## Raodmap
+   [Current plan for the iOS App](https://docs.google.com/document/d/1RZjJxI5B5UX8-zZS3JbH1sjIwA-1X-DdrN5g7aFLQq4/edit?usp=sharing).
 
 ## TODOs: 
 1. add Setting page, to enable users to add new mosque [BE] is required, @phase3
