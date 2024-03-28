@@ -8,7 +8,8 @@
 import Foundation
 
 final class TimeSchedular {
-    let salahTime = SalahTimes()
+    private let salahTime = SalahTimes()
+
     func getNextSalahTimeByMinutes() ->Int {
         return 0
     }

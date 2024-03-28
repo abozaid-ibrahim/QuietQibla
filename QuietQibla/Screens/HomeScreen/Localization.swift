@@ -11,7 +11,7 @@ import SwiftUI
 enum Localization {
     static let appName = "app.name"
     enum Home: String {
-        case home_aya = "home.screen.aya"
+        case homeAya = "home.screen.aya"
         case thisIsMosque = "this.is.mosque"
         case thisIsNotAmosque = "this.is.not.mosque"
         case lookingForLocation = "looking.for.your.location"

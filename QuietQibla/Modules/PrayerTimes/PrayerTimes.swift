@@ -27,7 +27,6 @@ struct SalahTimes {
     }
        
     mutating func nextSalahTime(latitude: Double, longitude: Double) async throws -> Int {
-//        let path = https: // api.aladhan.com/v1/calendar/2017/4?latitude=51.508515&longitude=-0.1254872&method=2http://api.aladhan.com/v1/calendar/2019?latitude=51.508515&longitude=-0.1254872&method=2
         if try getLastValidCacheVersion() {
             print("Please wait at least one day  before making another API request.")
             return 0 // cache.minutes to next salah
@@ -63,9 +62,9 @@ struct SalahTimes {
         let url = URL(string: "https://api.aladhan.com/v1/timings/\(Int(Date().timeIntervalSince1970))?latitude=\(latitude)&longitude=\(longitude)&method=2")!
         
         let (data, _) = try await URLSession.shared.data(from: url)
-        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-        let dataDict = json["data"] as! [String: Any]
-        let timings = dataDict["timings"] as! [String: String]
+        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let dataDict = json["data"] as? [String: Any],
+              let timings = dataDict["timings"] as? [String: String] else { return [:] }
         
         return timings
     }

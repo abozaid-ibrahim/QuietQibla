@@ -9,14 +9,16 @@ import SwiftUI
 
 @main
 struct QuietQiblaApp: App {
-    let router = Router()
+    private let router = Router()
+    @StateObject private var themeManager = ThemeManager(theme: .init(primaryColor: .secondary,
+                                                                      background: .white.opacity(0.15)))
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(router)
                 .environment(\.locale, .init(identifier: "ar"))
+                .environmentObject(themeManager)
         }
     }
 }
-

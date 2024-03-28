@@ -12,9 +12,10 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
-    @EnvironmentObject var router: Router
     @ObservedObject var locationManager = LocationManager()
     @State var viewModel = MainScreenViewModel()
+    @EnvironmentObject private var theme: ThemeManager
+    @EnvironmentObject private var router: Router
 
     var body: some View {
         NavigationStack(path: $router.path) {
@@ -35,7 +36,7 @@ struct ContentView: View {
                     Text("Location update not available")
                 }
                 Spacer()
-                Text(Localization.Home.home_aya.key)
+                Text(Localization.Home.homeAya.key)
                     .font(.largeTitle)
                     .padding()
                 if FeatureFlag.isEnabled(.addNewMosque) {
@@ -53,7 +54,7 @@ struct ContentView: View {
                 Spacer()
                 Text(viewModel.isMosque ? Localization.Home.thisIsMosque.key : Localization.Home.thisIsNotAmosque.key)
             }
-            .background(viewModel.isMosque ? Color.green : Color(UIColor.lightGray))
+            .background(viewModel.isMosque ? theme.current.primaryColor : Color(UIColor.lightGray))
             .navigationDestination(for: Screen.self) { screen in
                 switch screen {
                 case .mapScreen:
