@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainScreenView.swift
 //  QuietQibla
 //
 //  Created by abuzeid on 26.03.24.
@@ -31,7 +31,7 @@ struct ContentView: View {
                     Spacer()
                 }
                 if let locationUpdate = LocationListener.shared.mosqueFinder.locationUpdate {
-                    Text("Last updated: \(locationUpdate.lastUpdated)")//formatter: DateFormatter.localizedString(from:, dateStyle: .medium, timeStyle: .medium)
+                    Text("Last updated: \(locationUpdate.lastUpdated)") // formatter: DateFormatter.localizedString(from:, dateStyle: .medium, timeStyle: .medium)
                 } else {
                     Text("Location update not available")
                 }

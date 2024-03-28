@@ -10,19 +10,19 @@ import Foundation
 final class TimeSchedular {
     private let salahTime = SalahTimes()
 
-    func getNextSalahTimeByMinutes() ->Int {
-        return 0
+    func getNextSalahTimeByMinutes() -> Int {
+        0
     }
 
     var shouldEnableMosqueLocationListener: Bool {
-        return getNextSalahTimeByMinutes() < 15
+        getNextSalahTimeByMinutes() < 15
     }
 
-    func getPreviousSalahTimeByMinutes()->Int {
-        return 0
+    func getPreviousSalahTimeByMinutes() -> Int {
+        0
     }
 
     var shouldDisableMosqueLocationListener: Bool {
-        return getNextSalahTimeByMinutes() > 15 && getPreviousSalahTimeByMinutes() < 30
+        getNextSalahTimeByMinutes() > 15 && getPreviousSalahTimeByMinutes() < 30
     }
 }

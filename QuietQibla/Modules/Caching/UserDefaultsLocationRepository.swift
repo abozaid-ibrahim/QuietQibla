@@ -16,8 +16,7 @@ final class UserDefaultsLocationRepository: LocationRepository {
         guard let data = defaults.data(forKey: key) else { return [] }
         let decoder = PropertyListDecoder()
         do {
-            let locations = try decoder.decode([MosqueItem].self, from: data)
-            return locations
+            return try decoder.decode([MosqueItem].self, from: data)
         } catch {
             print("Error decoding locations: \(error.localizedDescription)")
             return []

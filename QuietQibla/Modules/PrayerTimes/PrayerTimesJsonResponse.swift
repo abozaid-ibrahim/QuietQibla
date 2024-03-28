@@ -6,14 +6,14 @@
 //
 
 import Foundation
+
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
 //   let prayerTimesJSONResponse = try? JSONDecoder().decode(PrayerTimesJSONResponse.self, from: jsonData)
 
-import Foundation
-
 // MARK: - PrayerTimesJSONResponse
+
 struct PrayerTimesJSONResponse: Codable {
     let code: Int
     let status: String
@@ -21,6 +21,7 @@ struct PrayerTimesJSONResponse: Codable {
 }
 
 // MARK: - Datum
+
 struct Datum: Codable {
     let timings: Timings
     let date: DateClass
@@ -28,6 +29,7 @@ struct Datum: Codable {
 }
 
 // MARK: - DateClass
+
 struct DateClass: Codable {
     let readable, timestamp: String
     let gregorian: Gregorian
@@ -35,6 +37,7 @@ struct DateClass: Codable {
 }
 
 // MARK: - Gregorian
+
 struct Gregorian: Codable {
     let date: String
     let format: Format
@@ -46,6 +49,7 @@ struct Gregorian: Codable {
 }
 
 // MARK: - Designation
+
 struct Designation: Codable {
     let abbreviated: Abbreviated
     let expanded: Expanded
@@ -66,19 +70,20 @@ enum Format: String, Codable {
 }
 
 // MARK: - GregorianMonth
+
 struct GregorianMonth: Codable {
     let number: Int
-    let en: String //"April"
+    let en: String // "April"
 }
 
-
-
 // MARK: - GregorianWeekday
+
 struct GregorianWeekday: Codable {
     let en: String
 }
 
 // MARK: - Hijri
+
 struct Hijri: Codable {
     let date: String
     let format: Format
@@ -91,19 +96,21 @@ struct Hijri: Codable {
 }
 
 // MARK: - HijriMonth
+
 struct HijriMonth: Codable {
     let number: Int
-    let en: String//"Rajab", "Shaʿbān"
+    let en: String // "Rajab", "Shaʿbān"
     let ar: String
 }
 
-
 // MARK: - HijriWeekday
+
 struct HijriWeekday: Codable {
     let en, ar: String
 }
 
 // MARK: - Meta
+
 struct Meta: Codable {
     let latitude, longitude: Double
     let timezone: String
@@ -118,6 +125,7 @@ enum LatitudeAdjustmentMethod: String, Codable {
 }
 
 // MARK: - Method
+
 struct Method: Codable {
     let id: Int
     let name: String
@@ -126,15 +134,17 @@ struct Method: Codable {
 }
 
 // MARK: - Location
+
 struct Location: Codable {
     let latitude, longitude: Double
 }
 
-//enum Name: String, Codable {
+// enum Name: String, Codable {
 //    case islamicSocietyOfNorthAmericaISNA = "Islamic Society of North America (ISNA)"
-//}
+// }
 
 // MARK: - Params
+
 struct Params: Codable {
     let fajr, isha: Int
 
@@ -148,11 +158,12 @@ enum MidnightMode: String, Codable {
     case standard = "STANDARD"
 }
 
-//enum Timezone: String, Codable {
+// enum Timezone: String, Codable {
 //    case europeLondon = "Europe/London"
-//}
+// }
 
 // MARK: - Timings
+
 struct Timings: Codable {
     let fajr, sunrise, dhuhr, asr: String
     let sunset, maghrib, isha, imsak: String

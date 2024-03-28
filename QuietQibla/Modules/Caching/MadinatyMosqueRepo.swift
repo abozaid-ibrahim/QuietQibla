@@ -8,7 +8,7 @@
 import Foundation
 
 final class MadinatyMosqueRepo: LocationRepository {
-    func addLocation(_ location: MosqueItem) {}
+    func addLocation(_: MosqueItem) {}
 
     func deleteAllLocations() {}
 
@@ -18,12 +18,10 @@ final class MadinatyMosqueRepo: LocationRepository {
         }
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let mosques = try JSONDecoder().decode([MosqueItem].self, from: data)
-            return mosques
+            return try JSONDecoder().decode([MosqueItem].self, from: data)
         } catch {
             print("Error loading JSON file: \(error)")
             return []
         }
     }
 }
-

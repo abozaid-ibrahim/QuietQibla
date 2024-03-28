@@ -40,7 +40,6 @@ struct MapView: View {
 
 extension MKMapView {
     func coordinate(from point: CGPoint) -> CLLocationCoordinate2D {
-        let coordinate = convert(point, toCoordinateFrom: self)
-        return coordinate
+        return convert(point, toCoordinateFrom: self)
     }
 }

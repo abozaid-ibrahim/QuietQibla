@@ -13,6 +13,6 @@ enum Screen {
     case mosqueList
 }
 
-final  class Router: ObservableObject {
+final class Router: ObservableObject {
     @Published var path = NavigationPath()
 }

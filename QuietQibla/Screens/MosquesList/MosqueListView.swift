@@ -7,7 +7,8 @@
 
 import Foundation
 import SwiftUI
-//Prayer care
+
+// Prayer care
 struct MosqueListView: View {
     let locations: [MosqueItem] = MadinatyMosqueRepo().fetchAll() + UserDefaultsLocationRepository().fetchAll()
     var body: some View {

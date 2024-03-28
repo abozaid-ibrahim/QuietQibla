@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+
 protocol APIClient {
     static var baseUrl: String { get }
 

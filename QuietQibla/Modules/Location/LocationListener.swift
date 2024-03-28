@@ -31,12 +31,12 @@ final class LocationListener: NSObject, ObservableObject, CLLocationManagerDeleg
         locationManager.requestAlwaysAuthorization()
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentLocation = locations.last else { return }
         // TODO: I dont like this piece of code, fix it
         if schedular.shouldDisableMosqueLocationListener {
             stop()
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {// dont deallocate this object
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2) { // dont deallocate this object
                 self.start()
             }
             return

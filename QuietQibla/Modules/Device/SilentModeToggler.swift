@@ -1,5 +1,5 @@
 //
-//  SilentToggler.swift
+//  SilentModeToggler.swift
 //  QuietQibla
 //
 //  Created by abuzeid on 28.03.24.
@@ -9,7 +9,7 @@ import AVFoundation
 import Foundation
 
 final class SilentModeToggler: ModeChanger {
-    var isSalahModeEnabled: Bool = false
+    var isSalahModeEnabled = false
 
     let watcher = ModeChangerWatcher()
     func shouldEnableSalahMode() -> Bool {
@@ -21,7 +21,7 @@ final class SilentModeToggler: ModeChanger {
 
     func shouldDisableSalahMode() -> Bool {
         guard isSalahModeEnabled, watcher.modeChanged else { return false }
-        isSalahModeEnabled =  toggleSilentMode(mode: .normal)
+        isSalahModeEnabled = toggleSilentMode(mode: .normal)
         watcher.salahModeIsActivated(false)
         return isSalahModeEnabled
     }

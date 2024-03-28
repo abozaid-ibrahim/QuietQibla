@@ -19,7 +19,7 @@ enum Localization {
         case salahModeOn = "home.salah.mode.on"
         case salahModeOff = "home.salah.mode.off"
         var key: LocalizedStringKey {
-            self.rawValue.localizedKey
+            rawValue.localizedKey
         }
     }
 }

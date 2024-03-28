@@ -26,8 +26,7 @@ final class MosqueFinder {
     private lazy var locations: [MosqueItem] = locationRepository.fetchAll() + UserDefaultsLocationRepository().fetchAll()
     @Published private(set) var locationUpdate: LocationUpdate?
     init(mosqueRadius: CLLocationDistance,
-         locationRepository: LocationRepository = MadinatyMosqueRepo())
-    {
+         locationRepository: LocationRepository = MadinatyMosqueRepo()) {
         self.mosqueRadius = mosqueRadius
         self.locationRepository = locationRepository
     }

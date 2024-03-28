@@ -11,8 +11,8 @@ import Foundation
 protocol ModeChanger {
     var isSalahModeEnabled: Bool { get }
 
-    func shouldEnableSalahMode()->Bool
-    func shouldDisableSalahMode()->Bool
+    func shouldEnableSalahMode() -> Bool
+    func shouldDisableSalahMode() -> Bool
 }
 
 /// make sure I didnt miss with other apps change the mode

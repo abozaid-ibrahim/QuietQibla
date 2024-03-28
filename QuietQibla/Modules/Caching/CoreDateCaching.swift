@@ -8,7 +8,6 @@
 import Foundation
 
 import CoreData
-import Foundation
 
 class LocationEntity: NSManagedObject {
     @NSManaged var latitude: Double

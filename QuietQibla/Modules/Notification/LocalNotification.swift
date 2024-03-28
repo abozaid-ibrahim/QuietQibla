@@ -37,7 +37,7 @@ struct LocalNotification {
         let request = UNNotificationRequest(identifier: "focusChanged", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
+            if let error {
                 print("Error sending notification: \(error.localizedDescription)")
             }
         }

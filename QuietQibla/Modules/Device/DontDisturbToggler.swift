@@ -5,19 +5,19 @@
 //  Created by abuzeid on 28.03.24.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
 
 final class DontDisturbToggler: ModeChanger {
     let watcher = ModeChangerWatcher()
     private(set) var isSalahModeEnabled = false
 
-    func shouldEnableSalahMode()->Bool {
+    func shouldEnableSalahMode() -> Bool {
         guard !isSalahModeEnabled else { return false }
         return enableFocusMode()
     }
 
-    private func enableFocusMode()->Bool {
+    private func enableFocusMode() -> Bool {
         guard !isSalahModeEnabled else { return false }
 
         do {
@@ -31,12 +31,12 @@ final class DontDisturbToggler: ModeChanger {
         }
     }
 
-    func shouldDisableSalahMode()->Bool {
+    func shouldDisableSalahMode() -> Bool {
         guard isSalahModeEnabled, watcher.modeChanged else { return false }
         return disableFocusMode()
     }
 
-    private func disableFocusMode()->Bool {
+    private func disableFocusMode() -> Bool {
         guard isSalahModeEnabled else { return false }
 
         do {
