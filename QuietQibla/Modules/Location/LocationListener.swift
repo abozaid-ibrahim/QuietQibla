@@ -14,6 +14,7 @@ final class LocationListener: NSObject, ObservableObject, CLLocationManagerDeleg
     let mosqueFinder = MosqueFinder(mosqueRadius: 200)
     static let shared = LocationListener()
     private let schedular = TimeSchedular()
+
     func start() {
         locationManager.startUpdatingLocation()
     }

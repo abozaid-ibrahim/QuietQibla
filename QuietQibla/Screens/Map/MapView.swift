@@ -17,7 +17,11 @@ struct MapView: View {
     @State private var annotationCoordinate: MosqueItem?
 
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: [annotationCoordinate].compactMap { $0 }) { coordinate in
+        Map(coordinateRegion: $region,
+            showsUserLocation: true,
+            userTrackingMode: .constant(.follow),
+            annotationItems: [annotationCoordinate].compactMap { $0 })
+        { coordinate in
             MapMarker(coordinate: .init(latitude: coordinate.latitude, longitude: coordinate.longitude), tint: .red)
         }
         .edgesIgnoringSafeArea(.all)
@@ -40,6 +44,6 @@ struct MapView: View {
 
 extension MKMapView {
     func coordinate(from point: CGPoint) -> CLLocationCoordinate2D {
-        return convert(point, toCoordinateFrom: self)
+        convert(point, toCoordinateFrom: self)
     }
 }

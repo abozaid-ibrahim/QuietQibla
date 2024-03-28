@@ -15,7 +15,7 @@ struct QuietQiblaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreenView()
                 .environmentObject(router)
                 .environment(\.locale, .init(identifier: "ar"))
                 .environmentObject(themeManager)

@@ -51,14 +51,10 @@ struct Gregorian: Codable {
 // MARK: - Designation
 
 struct Designation: Codable {
-    let abbreviated: Abbreviated
+    let abbreviated: String
     let expanded: Expanded
 }
 
-enum Abbreviated: String, Codable {
-    case ad = "AD"
-    case ah = "AH"
-}
 
 enum Expanded: String, Codable {
     case annoDomini = "Anno Domini"

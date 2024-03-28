@@ -14,6 +14,7 @@ enum Feature: CaseIterable {
 
 enum FeatureFlag {
     private static var enabledFeatures: Set<Feature> = .init()
+
     static func isEnabled(_ feature: Feature) -> Bool {
         enabledFeatures.contains(feature)
     }

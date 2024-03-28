@@ -11,6 +11,8 @@ analyzer_rules:
 opt_in_rules:
   - all
 disabled_rules:
+  - opening_brace
+  - shorthand_optional_binding
   - anonymous_argument_in_multiline_closure
   - anyobject_protocol
   - closure_body_length
@@ -54,7 +56,9 @@ disabled_rules:
   - type_contents_order
   - unused_capture_list
   - vertical_whitespace_between_cases
-
+line_length:
+  warning: 160
+  error: 200
 attributes:
   always_on_line_above:
     - "@ConfigurationElement"
@@ -63,6 +67,8 @@ attributes:
 identifier_name:
   excluded:
     - id
+    - ar
+    - en
 large_tuple: 3
 number_separator:
   minimum_length: 5

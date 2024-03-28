@@ -17,9 +17,12 @@ import Foundation
 struct SalahTimes {
     let network = NetworkAPIClient()
     private(set) var cache: CachingPolicy?
+
     mutating func getLastValidCacheVersion() throws -> Bool {
-        if let lastCallTime = cache?.lastAPICallTime,
-           Date().timeIntervalSince(lastCallTime) < 60 * 60 * 12 { // TODO: cache is valid for only one day.
+        if
+            let lastCallTime = cache?.lastAPICallTime,
+            Date().timeIntervalSince(lastCallTime) < 60 * 60 * 12
+        { // TODO: cache is valid for only one day.
             return true
         }
         return false
@@ -61,15 +64,17 @@ struct SalahTimes {
         let url = URL(string: "https://api.aladhan.com/v1/timings/\(Int(Date().timeIntervalSince1970))?latitude=\(latitude)&longitude=\(longitude)&method=2")!
 
         let (data, _) = try await URLSession.shared.data(from: url)
-        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-              let dataDict = json["data"] as? [String: Any],
-              let timings = dataDict["timings"] as? [String: String] else { return [:] }
+        guard
+            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let dataDict = json["data"] as? [String: Any],
+            let timings = dataDict["timings"] as? [String: String] else { return [:] }
 
         return timings
     }
 
     func fetchPrayerTimings2(latitude: String, longitude: String) async throws -> PrayerTimesJSONResponse {
-        return try await network.fetchData(for: .init(path: "timings/\(Int(Date().timeIntervalSince1970))?latitude=\(latitude)&longitude=\(longitude)&method=2")) as PrayerTimesJSONResponse
+        try await network.fetchData(for:
+            .init(path: "timings/\(Int(Date().timeIntervalSince1970))?latitude=\(latitude)&longitude=\(longitude)&method=2")) as PrayerTimesJSONResponse
     }
 }
 

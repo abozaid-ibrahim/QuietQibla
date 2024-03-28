@@ -13,7 +13,8 @@ final class MadinatyMosqueRepo: LocationRepository {
     func deleteAllLocations() {}
 
     func fetchAll() -> [MosqueItem] {
-        guard let path = Bundle.main.path(forResource: "madinaty_mosques", ofType: "json") else {
+        guard let path = Bundle.main.path(forResource: "madinaty_mosques", ofType: "json")
+        else {
             return []
         }
         do {

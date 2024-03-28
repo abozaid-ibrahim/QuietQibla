@@ -11,9 +11,9 @@ import MapKit
 import SwiftUI
 import UIKit
 
-struct ContentView: View {
+struct MainScreenView: View {
     @ObservedObject var locationManager = LocationManager()
-    @State var viewModel = MainScreenViewModel()
+    @State private var viewModel = MainScreenViewModel()
     @EnvironmentObject private var theme: ThemeManager
     @EnvironmentObject private var router: Router
 
@@ -31,7 +31,8 @@ struct ContentView: View {
                     Spacer()
                 }
                 if let locationUpdate = LocationListener.shared.mosqueFinder.locationUpdate {
-                    Text("Last updated: \(locationUpdate.lastUpdated)") // formatter: DateFormatter.localizedString(from:, dateStyle: .medium, timeStyle: .medium)
+                    Text("Last updated: \(locationUpdate.lastUpdated)")
+                    // formatter: DateFormatter.localizedString(from:, dateStyle: .medium, timeStyle: .medium)
                 } else {
                     Text("Location update not available")
                 }
@@ -81,5 +82,5 @@ final class MainScreenViewModel {
 }
 
 #Preview {
-    ContentView()
+    MainScreenView()
 }

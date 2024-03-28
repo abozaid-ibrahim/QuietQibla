@@ -24,7 +24,8 @@ struct NetworkAPIClient: APIClient {
     }()
 
     func fetchData<T: Decodable>(for endpoint: EndPoint) async throws -> T {
-        guard let url = URL(string: "\(Self.baseUrl)\(endpoint.path)") else {
+        guard let url = URL(string: "\(Self.baseUrl)\(endpoint.path)")
+        else {
             throw NetworkError.invalidURL
         }
         let (data, _) = try await URLSession.shared.data(from: url)

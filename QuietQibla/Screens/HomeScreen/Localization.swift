@@ -10,6 +10,7 @@ import SwiftUI
 
 enum Localization {
     static let appName = "app.name"
+
     enum Home: String {
         case homeAya = "home.screen.aya"
         case thisIsMosque = "this.is.mosque"
@@ -18,6 +19,7 @@ enum Localization {
         case currentLocation = "current_location"
         case salahModeOn = "home.salah.mode.on"
         case salahModeOff = "home.salah.mode.off"
+
         var key: LocalizedStringKey {
             rawValue.localizedKey
         }

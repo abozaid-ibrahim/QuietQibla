@@ -9,9 +9,10 @@ import AVFoundation
 import Foundation
 
 final class SilentModeToggler: ModeChanger {
-    var isSalahModeEnabled = false
 
+    var isSalahModeEnabled = false
     let watcher = ModeChangerWatcher()
+    
     func shouldEnableSalahMode() -> Bool {
         if isSalahModeEnabled { return false }
         isSalahModeEnabled = toggleSilentMode(mode: .silent)
