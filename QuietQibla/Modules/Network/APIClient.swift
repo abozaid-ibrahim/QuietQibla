@@ -1,6 +1,6 @@
 //
 //  APIClient.swift
-//  ResyPhotos
+//  QuietQibla
 //
 //  Created by abuzeid on 13.01.24.
 //
@@ -14,7 +14,7 @@ protocol APIClient {
 }
 
 struct NetworkAPIClient: APIClient {
-    static let baseUrl = "https://api.aladhan.com/v1/calendar/"
+    static let baseUrl = "https://api.aladhan.com/v1/"
     // TODO: should be moved to a seperate Decoding class
     private var jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()

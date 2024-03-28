@@ -1,6 +1,6 @@
 //
 //  LoadingDataState.swift
-//  ResyPhotos
+//  QuietQibla
 //
 //  Created by abuzeid on 13.01.24.
 //

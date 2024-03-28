@@ -1,9 +1,11 @@
 //
-//  Caching.swift
+//  CoreDateCaching.swift
 //  QuietQibla
 //
-//  Created by abuzeid on 26.03.24.
+//  Created by abuzeid on 28.03.24.
 //
+
+import Foundation
 
 import CoreData
 import Foundation
@@ -19,69 +21,6 @@ extension LocationEntity {
         location.latitude = latitude
         location.longitude = longitude
         return location
-    }
-}
-
-import Combine
-import CoreData
-
-protocol LocationRepository {
-    func fetchAll() -> [MosqueItem]
-    func addLocation(_ location: MosqueItem)
-    func deleteAllLocations()
-}
-
-class MadinatyMosqueRepo: LocationRepository {
-    func addLocation(_ location: MosqueItem) {}
-
-    func deleteAllLocations() {}
-
-    func fetchAll() -> [MosqueItem] {
-        guard let path = Bundle.main.path(forResource: "madinaty_mosques", ofType: "json") else {
-            return []
-        }
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let mosques = try JSONDecoder().decode([MosqueItem].self, from: data)
-            return mosques
-        } catch {
-            print("Error loading JSON file: \(error)")
-            return []
-        }
-    }
-}
-
-// TODO: should be changed, very slow not scalable.
-class UserDefaultsLocationRepository: LocationRepository {
-    private let key = "MosquelocationsArray"
-    private let defaults = UserDefaults.standard
-
-    func fetchAll() -> [MosqueItem] {
-        guard let data = defaults.data(forKey: key) else { return [] }
-        let decoder = PropertyListDecoder()
-        do {
-            let locations = try decoder.decode([MosqueItem].self, from: data)
-            return locations
-        } catch {
-            print("Error decoding locations: \(error.localizedDescription)")
-            return []
-        }
-    }
-
-    func addLocation(_ location: MosqueItem) {
-        var locations = fetchAll()
-        locations.append(location)
-        let encoder = PropertyListEncoder()
-        do {
-            let data = try encoder.encode(locations)
-            defaults.set(data, forKey: key)
-        } catch {
-            print("Error encoding locations: \(error.localizedDescription)")
-        }
-    }
-
-    func deleteAllLocations() {
-        defaults.removeObject(forKey: key)
     }
 }
 

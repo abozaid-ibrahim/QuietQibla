@@ -1,6 +1,6 @@
 //
 //  EndPoint.swift
-//  ResyPhotos
+//  QuietQibla
 //
 //  Created by abuzeid on 14.01.24.
 //

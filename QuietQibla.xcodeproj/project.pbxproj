@@ -30,13 +30,17 @@
 		6C8C280B2BB5C87200B1E162 /* LoadingDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28082BB5C87200B1E162 /* LoadingDataState.swift */; };
 		6C8C280C2BB5C87200B1E162 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28092BB5C87200B1E162 /* EndPoint.swift */; };
 		6C8C280E2BB5CC7800B1E162 /* QuietQiblaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C280D2BB5CC7800B1E162 /* QuietQiblaApp.swift */; };
+		6C8C28122BB5D11F00B1E162 /* CoreDateCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28112BB5D11E00B1E162 /* CoreDateCaching.swift */; };
+		6C8C28142BB5D13900B1E162 /* UserDefaultsLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28132BB5D13900B1E162 /* UserDefaultsLocationRepository.swift */; };
+		6C8C28162BB5D16000B1E162 /* MadinatyMosqueRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28152BB5D16000B1E162 /* MadinatyMosqueRepo.swift */; };
+		6C8C28182BB5D4C700B1E162 /* PrayerTimesJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28172BB5D4C700B1E162 /* PrayerTimesJsonResponse.swift */; };
 		6CAD44032BB278B800DB57D1 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* MainScreenView.swift */; };
 		6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44042BB278BA00DB57D1 /* Assets.xcassets */; };
 		6CAD44082BB278BA00DB57D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44072BB278BA00DB57D1 /* Preview Assets.xcassets */; };
 		6CAD44122BB278BA00DB57D1 /* QuietQiblaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44112BB278BA00DB57D1 /* QuietQiblaTests.swift */; };
 		6CAD441C2BB278BA00DB57D1 /* QuietQiblaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD441B2BB278BA00DB57D1 /* QuietQiblaUITests.swift */; };
 		6CAD441E2BB278BA00DB57D1 /* QuietQiblaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD441D2BB278BA00DB57D1 /* QuietQiblaUITestsLaunchTests.swift */; };
-		6CDD03CD2BB2926D0084661C /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD03CC2BB2926D0084661C /* Caching.swift */; };
+		6CDD03CD2BB2926D0084661C /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD03CC2BB2926D0084661C /* LocationRepository.swift */; };
 		6CDD03CF2BB298BE0084661C /* CachingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD03CE2BB298BE0084661C /* CachingTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +73,7 @@
 		6C8C27E22BB2A9D100B1E162 /* FeatureFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlag.swift; sourceTree = "<group>"; };
 		6C8C27E42BB2B29800B1E162 /* MosqueFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueFinder.swift; sourceTree = "<group>"; };
 		6C8C27E62BB2B31D00B1E162 /* MosqueFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosqueFinderTests.swift; sourceTree = "<group>"; };
-		6C8C27E82BB2B96C00B1E162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6C8C27E82BB2B96C00B1E162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C8C27E92BB2BEAD00B1E162 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		6C8C27EF2BB2C18100B1E162 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C8C27F12BB2C18200B1E162 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -83,6 +87,10 @@
 		6C8C28082BB5C87200B1E162 /* LoadingDataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingDataState.swift; sourceTree = "<group>"; };
 		6C8C28092BB5C87200B1E162 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		6C8C280D2BB5CC7800B1E162 /* QuietQiblaApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuietQiblaApp.swift; sourceTree = "<group>"; };
+		6C8C28112BB5D11E00B1E162 /* CoreDateCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDateCaching.swift; sourceTree = "<group>"; };
+		6C8C28132BB5D13900B1E162 /* UserDefaultsLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsLocationRepository.swift; sourceTree = "<group>"; };
+		6C8C28152BB5D16000B1E162 /* MadinatyMosqueRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadinatyMosqueRepo.swift; sourceTree = "<group>"; };
+		6C8C28172BB5D4C700B1E162 /* PrayerTimesJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesJsonResponse.swift; sourceTree = "<group>"; };
 		6CAD43FD2BB278B800DB57D1 /* QuietQibla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuietQibla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD44022BB278B800DB57D1 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		6CAD44042BB278BA00DB57D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,7 +100,7 @@
 		6CAD44172BB278BA00DB57D1 /* QuietQiblaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuietQiblaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD441B2BB278BA00DB57D1 /* QuietQiblaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietQiblaUITests.swift; sourceTree = "<group>"; };
 		6CAD441D2BB278BA00DB57D1 /* QuietQiblaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietQiblaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6CDD03CC2BB2926D0084661C /* Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
+		6CDD03CC2BB2926D0084661C /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		6CDD03CE2BB298BE0084661C /* CachingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +147,8 @@
 		6C581E262BB2A4650095DE84 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				6C581E1B2BB2A36E0095DE84 /* MosqueItem.swift */,
+				6C581E212BB2A3B30095DE84 /* Router.swift */,
 				6C581E2D2BB2A4B00095DE84 /* MosquesList */,
 				6C581E2C2BB2A4AD0095DE84 /* Map */,
 				6C581E2B2BB2A4A80095DE84 /* HomeScreen */,
@@ -170,7 +180,10 @@
 		6C581E292BB2A4850095DE84 /* Caching */ = {
 			isa = PBXGroup;
 			children = (
-				6CDD03CC2BB2926D0084661C /* Caching.swift */,
+				6CDD03CC2BB2926D0084661C /* LocationRepository.swift */,
+				6C8C28112BB5D11E00B1E162 /* CoreDateCaching.swift */,
+				6C8C28132BB5D13900B1E162 /* UserDefaultsLocationRepository.swift */,
+				6C8C28152BB5D16000B1E162 /* MadinatyMosqueRepo.swift */,
 			);
 			path = Caching;
 			sourceTree = "<group>";
@@ -240,8 +253,18 @@
 			children = (
 				6C8C28012BB51F8100B1E162 /* SalahTimes.swift */,
 				6C8C27F92BB51CF300B1E162 /* TimeSchedular.swift */,
+				6C8C28172BB5D4C700B1E162 /* PrayerTimesJsonResponse.swift */,
 			);
 			path = SalahTimes;
+			sourceTree = "<group>";
+		};
+		6C8C280F2BB5CF1A00B1E162 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6C8C27E82BB2B96C00B1E162 /* Info.plist */,
+				6C8C280D2BB5CC7800B1E162 /* QuietQiblaApp.swift */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		6CAD43F42BB278B800DB57D1 = {
@@ -267,14 +290,11 @@
 		6CAD43FF2BB278B800DB57D1 /* QuietQibla */ = {
 			isa = PBXGroup;
 			children = (
-				6C8C280D2BB5CC7800B1E162 /* QuietQiblaApp.swift */,
-				6C8C27E82BB2B96C00B1E162 /* Info.plist */,
+				6C8C280F2BB5CF1A00B1E162 /* SupportFiles */,
 				6C581E262BB2A4650095DE84 /* Screens */,
 				6C581E252BB2A4600095DE84 /* Modules */,
 				6CAD44042BB278BA00DB57D1 /* Assets.xcassets */,
 				6CAD44062BB278BA00DB57D1 /* Preview Content */,
-				6C581E1B2BB2A36E0095DE84 /* MosqueItem.swift */,
-				6C581E212BB2A3B30095DE84 /* Router.swift */,
 			);
 			path = QuietQibla;
 			sourceTree = "<group>";
@@ -440,19 +460,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C581E202BB2A39D0095DE84 /* MapScreen.swift in Sources */,
-				6CDD03CD2BB2926D0084661C /* Caching.swift in Sources */,
+				6CDD03CD2BB2926D0084661C /* LocationRepository.swift in Sources */,
 				6C8C27EA2BB2BEAD00B1E162 /* Localization.swift in Sources */,
 				6C8C280A2BB5C87200B1E162 /* APIClient.swift in Sources */,
 				6C8C280E2BB5CC7800B1E162 /* QuietQiblaApp.swift in Sources */,
 				6C8C280C2BB5C87200B1E162 /* EndPoint.swift in Sources */,
+				6C8C28182BB5D4C700B1E162 /* PrayerTimesJsonResponse.swift in Sources */,
 				6C581E222BB2A3B30095DE84 /* Router.swift in Sources */,
 				6C581E1E2BB2A37E0095DE84 /* MapView.swift in Sources */,
 				6C581E162BB2A3130095DE84 /* ModeChanger.swift in Sources */,
+				6C8C28162BB5D16000B1E162 /* MadinatyMosqueRepo.swift in Sources */,
 				6C581E1A2BB2A3500095DE84 /* LocationManager.swift in Sources */,
 				6CAD44032BB278B800DB57D1 /* MainScreenView.swift in Sources */,
 				6C8C27FA2BB51CF300B1E162 /* TimeSchedular.swift in Sources */,
 				6C8C27F62BB2FC5A00B1E162 /* LocalNotification.swift in Sources */,
+				6C8C28122BB5D11F00B1E162 /* CoreDateCaching.swift in Sources */,
 				6C581E182BB2A33A0095DE84 /* LocationListener.swift in Sources */,
+				6C8C28142BB5D13900B1E162 /* UserDefaultsLocationRepository.swift in Sources */,
 				6C8C280B2BB5C87200B1E162 /* LoadingDataState.swift in Sources */,
 				6C8C28042BB524FF00B1E162 /* SilentModeToggler.swift in Sources */,
 				6C8C28022BB51F8100B1E162 /* SalahTimes.swift in Sources */,
@@ -641,7 +665,7 @@
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuietQibla/Info.plist;
+				INFOPLIST_FILE = QuietQibla/SupportFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = QuietQibla;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
@@ -675,7 +699,7 @@
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuietQibla/Info.plist;
+				INFOPLIST_FILE = QuietQibla/SupportFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = QuietQibla;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = NSLocationAlwaysAndWhenInUsageDescription;
