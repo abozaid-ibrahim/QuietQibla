@@ -29,8 +29,11 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
-                Text("Updated at \(viewModel.location?.lastUpdated ?? "")")
-
+                if let locationUpdate = LocationListener.shared.mosqueFinder.locationUpdate {
+                    Text("Last updated: \(locationUpdate.lastUpdated)")//formatter: DateFormatter.localizedString(from:, dateStyle: .medium, timeStyle: .medium)
+                } else {
+                    Text("Location update not available")
+                }
                 Spacer()
                 Text(Localization.Home.home_aya.key)
                     .font(.largeTitle)

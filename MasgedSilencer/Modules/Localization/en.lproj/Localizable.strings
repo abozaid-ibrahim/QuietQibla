@@ -6,8 +6,11 @@
   
 */
 //TODO: different ways of naming keys
+"app.name" = "Mosque Free Noise";
 "home.scren.aya" = "قَدْ أَفْلَحَ الْمُؤْمِنُونَ ۝ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ";
 "this.is.mosque" = "You are very close to the mosque";
 "this.is.not.mosque" = "You are away from the mosque";
 "looking.for.your.location" = "Waiting for location";
 "current_location" = "Current Location: %@";
+"home.salah.mode.on" = "Salah mode is enabled";
+"home.salah.mode.off" = "Salah mode is disaled";

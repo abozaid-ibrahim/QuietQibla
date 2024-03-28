@@ -53,7 +53,7 @@ class MadinatyMosqueRepo: LocationRepository {
 
 // TODO: should be changed, very slow not scalable.
 class UserDefaultsLocationRepository: LocationRepository {
-    private let key = "locationsArray"
+    private let key = "MosquelocationsArray"
     private let defaults = UserDefaults.standard
 
     func fetchAll() -> [MosqueItem] {

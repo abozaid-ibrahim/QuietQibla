@@ -22,9 +22,9 @@ final class MosqueFinder {
     private let mosqueRadius: CLLocationDistance
     private let locationRepository: LocationRepository
     private let notifier = LocalNotification()
-    private let mode: ModeChanger = SilentModeChanger()
-    private lazy var locations: [MosqueItem] = locationRepository.fetchAll()
-    var locationUpdate:LocationUpdate?
+    private let mode: ModeChanger = SilentModeToggler()
+    private lazy var locations: [MosqueItem] = locationRepository.fetchAll() + UserDefaultsLocationRepository().fetchAll()
+    @Published private(set) var locationUpdate: LocationUpdate?
     init(mosqueRadius: CLLocationDistance,
          locationRepository: LocationRepository = MadinatyMosqueRepo())
     {
@@ -45,13 +45,13 @@ final class MosqueFinder {
 
     func checkIfCurrentLocationIsMosque(_ location: CLLocation) {
         guard let mosque = getMosqueOf(currentLocation: location) else {
-            mode.shouldDisableFocusMode()
-            notifier.sendNotification(notif: .init(title: "Khashe3", body: "SetFocus off"))
             locationUpdate = LocationUpdate(isCurrentLocationMosque: false)
+            guard mode.shouldDisableSalahMode() else { return }
+            notifier.sendNotification(notif: .init(title: Localization.appName, body: "SetFocus off"))
             return
         }
-        mode.shouldEnableFocusMode()
         locationUpdate = LocationUpdate(isCurrentLocationMosque: true)
+        guard mode.shouldEnableSalahMode() else { return }
         notifier.sendNotification(notif: .init(title: mosque.name, body: "SetFocus on"))
     }
 }

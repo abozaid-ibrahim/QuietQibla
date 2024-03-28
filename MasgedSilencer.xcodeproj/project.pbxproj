@@ -22,8 +22,15 @@
 		6C8C27EE2BB2C18100B1E162 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C27F02BB2C18100B1E162 /* Localizable.strings */; };
 		6C8C27F32BB2F5FD00B1E162 /* madinaty_mosques.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */; };
 		6C8C27F62BB2FC5A00B1E162 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27F52BB2FC5A00B1E162 /* LocalNotification.swift */; };
+		6C8C27FA2BB51CF300B1E162 /* TimeSchedular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27F92BB51CF300B1E162 /* TimeSchedular.swift */; };
+		6C8C27FE2BB51F5000B1E162 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27FB2BB51F5000B1E162 /* EndPoint.swift */; };
+		6C8C27FF2BB51F5000B1E162 /* LoadingDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27FC2BB51F5000B1E162 /* LoadingDataState.swift */; };
+		6C8C28002BB51F5000B1E162 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C27FD2BB51F5000B1E162 /* APIClient.swift */; };
+		6C8C28022BB51F8100B1E162 /* SalahTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28012BB51F8100B1E162 /* SalahTimes.swift */; };
+		6C8C28042BB524FF00B1E162 /* SilentModeToggler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28032BB524FF00B1E162 /* SilentModeToggler.swift */; };
+		6C8C28062BB5279800B1E162 /* DontDisturbToggler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8C28052BB5279800B1E162 /* DontDisturbToggler.swift */; };
 		6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */; };
-		6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* ContentView.swift */; };
+		6CAD44032BB278B800DB57D1 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44022BB278B800DB57D1 /* MainScreenView.swift */; };
 		6CAD44052BB278BA00DB57D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44042BB278BA00DB57D1 /* Assets.xcassets */; };
 		6CAD44082BB278BA00DB57D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD44072BB278BA00DB57D1 /* Preview Assets.xcassets */; };
 		6CAD44122BB278BA00DB57D1 /* MasgedSilencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD44112BB278BA00DB57D1 /* MasgedSilencerTests.swift */; };
@@ -68,9 +75,16 @@
 		6C8C27F12BB2C18200B1E162 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C8C27F22BB2D15000B1E162 /* madinaty_mosques.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = madinaty_mosques.json; sourceTree = "<group>"; };
 		6C8C27F52BB2FC5A00B1E162 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		6C8C27F92BB51CF300B1E162 /* TimeSchedular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSchedular.swift; sourceTree = "<group>"; };
+		6C8C27FB2BB51F5000B1E162 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndPoint.swift; path = ../../../../ResyPhotos/ResyPhotos/Modules/Network/EndPoint.swift; sourceTree = "<group>"; };
+		6C8C27FC2BB51F5000B1E162 /* LoadingDataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingDataState.swift; path = ../../../../ResyPhotos/ResyPhotos/Modules/Network/LoadingDataState.swift; sourceTree = "<group>"; };
+		6C8C27FD2BB51F5000B1E162 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ../../../../ResyPhotos/ResyPhotos/Modules/Network/APIClient.swift; sourceTree = "<group>"; };
+		6C8C28012BB51F8100B1E162 /* SalahTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahTimes.swift; sourceTree = "<group>"; };
+		6C8C28032BB524FF00B1E162 /* SilentModeToggler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentModeToggler.swift; sourceTree = "<group>"; };
+		6C8C28052BB5279800B1E162 /* DontDisturbToggler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontDisturbToggler.swift; sourceTree = "<group>"; };
 		6CAD43FD2BB278B800DB57D1 /* MasgedSilencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasgedSilencer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD44002BB278B800DB57D1 /* MasgedSilencerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasgedSilencerApp.swift; sourceTree = "<group>"; };
-		6CAD44022BB278B800DB57D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6CAD44022BB278B800DB57D1 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		6CAD44042BB278BA00DB57D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CAD44072BB278BA00DB57D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6CAD440D2BB278BA00DB57D1 /* MasgedSilencerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasgedSilencerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +124,8 @@
 		6C581E252BB2A4600095DE84 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6C8C27F82BB51CCC00B1E162 /* SalahTimes */,
+				6C8C27F72BB51CC500B1E162 /* Network */,
 				6C8C27F42BB2FC4D00B1E162 /* Notification */,
 				6C8C27EB2BB2BFE400B1E162 /* Localization */,
 				6C8C27E12BB2A9C500B1E162 /* FeatureFlags */,
@@ -145,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				6C581E152BB2A3130095DE84 /* ModeChanger.swift */,
+				6C8C28032BB524FF00B1E162 /* SilentModeToggler.swift */,
+				6C8C28052BB5279800B1E162 /* DontDisturbToggler.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -160,7 +178,7 @@
 		6C581E2B2BB2A4A80095DE84 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				6CAD44022BB278B800DB57D1 /* ContentView.swift */,
+				6CAD44022BB278B800DB57D1 /* MainScreenView.swift */,
 				6C8C27E92BB2BEAD00B1E162 /* Localization.swift */,
 			);
 			path = HomeScreen;
@@ -205,6 +223,25 @@
 				6C8C27F52BB2FC5A00B1E162 /* LocalNotification.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		6C8C27F72BB51CC500B1E162 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6C8C27FD2BB51F5000B1E162 /* APIClient.swift */,
+				6C8C27FB2BB51F5000B1E162 /* EndPoint.swift */,
+				6C8C27FC2BB51F5000B1E162 /* LoadingDataState.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6C8C27F82BB51CCC00B1E162 /* SalahTimes */ = {
+			isa = PBXGroup;
+			children = (
+				6C8C28012BB51F8100B1E162 /* SalahTimes.swift */,
+				6C8C27F92BB51CF300B1E162 /* TimeSchedular.swift */,
+			);
+			path = SalahTimes;
 			sourceTree = "<group>";
 		};
 		6CAD43F42BB278B800DB57D1 = {
@@ -407,16 +444,23 @@
 				6C8C27EA2BB2BEAD00B1E162 /* Localization.swift in Sources */,
 				6C581E222BB2A3B30095DE84 /* Router.swift in Sources */,
 				6C581E1E2BB2A37E0095DE84 /* MapView.swift in Sources */,
+				6C8C27FE2BB51F5000B1E162 /* EndPoint.swift in Sources */,
+				6C8C28002BB51F5000B1E162 /* APIClient.swift in Sources */,
 				6C581E162BB2A3130095DE84 /* ModeChanger.swift in Sources */,
 				6C581E1A2BB2A3500095DE84 /* LocationManager.swift in Sources */,
-				6CAD44032BB278B800DB57D1 /* ContentView.swift in Sources */,
+				6CAD44032BB278B800DB57D1 /* MainScreenView.swift in Sources */,
+				6C8C27FA2BB51CF300B1E162 /* TimeSchedular.swift in Sources */,
 				6C8C27F62BB2FC5A00B1E162 /* LocalNotification.swift in Sources */,
 				6C581E182BB2A33A0095DE84 /* LocationListener.swift in Sources */,
+				6C8C27FF2BB51F5000B1E162 /* LoadingDataState.swift in Sources */,
+				6C8C28042BB524FF00B1E162 /* SilentModeToggler.swift in Sources */,
+				6C8C28022BB51F8100B1E162 /* SalahTimes.swift in Sources */,
 				6CAD44012BB278B800DB57D1 /* MasgedSilencerApp.swift in Sources */,
 				6C581E1C2BB2A36E0095DE84 /* MosqueItem.swift in Sources */,
 				6C8C27E32BB2A9D100B1E162 /* FeatureFlag.swift in Sources */,
 				6C581E242BB2A3C20095DE84 /* MosqueListView.swift in Sources */,
 				6C8C27E52BB2B29800B1E162 /* MosqueFinder.swift in Sources */,
+				6C8C28062BB5279800B1E162 /* DontDisturbToggler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
