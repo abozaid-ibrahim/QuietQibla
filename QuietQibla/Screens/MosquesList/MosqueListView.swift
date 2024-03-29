@@ -17,7 +17,7 @@ struct MosqueListView: View {
                 Text("\(mosque.name), \(mosque.latitude), \(mosque.longitude)")
             }
 
-            Text("Silencer Location Count: \(locations.count)")
+            Text("Mosques nearby: \(locations.count)")
                 .padding()
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class TimeSchedular {
-    private let salahTime = SalahTimes()
+    private let salahTime = PrayerTimes(location: .init(latitude: 0, longitude: 0))
 
     func getNextSalahTimeByMinutes() -> Int {
         0

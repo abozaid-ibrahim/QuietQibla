@@ -24,8 +24,8 @@ struct PrayerTimesJSONResponse: Codable {
 
 struct Datum: Codable {
     let timings: Timings
-    let date: DateClass
-    let meta: Meta
+    let date: DateClass?
+    let meta: Meta?
 }
 
 // MARK: - DateClass
@@ -161,21 +161,6 @@ enum MidnightMode: String, Codable {
 // MARK: - Timings
 
 struct Timings: Codable {
-    let fajr, sunrise, dhuhr, asr: String
-    let sunset, maghrib, isha, imsak: String
-    let midnight, firstthird, lastthird: String
-
-    enum CodingKeys: String, CodingKey {
-        case fajr
-        case sunrise
-        case dhuhr
-        case asr
-        case sunset
-        case maghrib
-        case isha
-        case imsak
-        case midnight
-        case firstthird
-        case lastthird
-    }
+    let fajr, dhuhr, asr: String
+    let maghrib, isha: String
 }

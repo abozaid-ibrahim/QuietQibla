@@ -1,5 +1,5 @@
 //
-//  SalahTimes.swift
+//  PrayerTimes.swift
 //  QuietQibla
 //
 //  Created by abuzeid on 28.03.24.
@@ -14,73 +14,65 @@
  */
 import Foundation
 
-struct SalahTimes {
-    let network = NetworkAPIClient()
+final class PrayerTimes {
+    let network: APIClient
+    let location: MyLocation
+    let prayerManager: PrayerManager
     private(set) var cache: CachingPolicy?
 
-    mutating func getLastValidCacheVersion() throws -> Bool {
-        if
-            let lastCallTime = cache?.lastAPICallTime,
-            Date().timeIntervalSince(lastCallTime) < 60 * 60 * 12
-        { // TODO: cache is valid for only one day.
-            return true
-        }
-        return false
+    init(network: APIClient = NetworkAPIClient(),
+         prayerManager: PrayerManager = PrayerManager(),
+         location: MyLocation,
+         cache: CachingPolicy? = nil)
+    {
+        self.network = network
+        self.prayerManager = prayerManager
+        self.location = location
+        self.cache = cache
     }
 
-    mutating func nextSalahTime(latitude: Double, longitude: Double) async throws -> Int {
-        if try getLastValidCacheVersion() {
-            print("Please wait at least one day  before making another API request.")
-            return 0 // cache.minutes to next salah
+    func getLastValidCacheVersion() -> Timings? {
+        if let cached = cache,
+           cached.lastAPICallTime.isSameDay()
+        {
+            return cached.prayerTimes
         }
-
-        do {
-            let timings = try await fetchPrayerTimings(latitude: String(latitude), longitude: String(longitude))
-
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            let currentTime = Date()
-
-            let sortedTimings = timings.sorted(by: { dateFormatter.date(from: $0.value)! < dateFormatter.date(from: $1.value)! })
-
-            for timing in sortedTimings {
-                let prayerTime = dateFormatter.date(from: timing.value)!
-                if prayerTime > currentTime {
-                    let timeDifference = prayerTime.timeIntervalSince(currentTime)
-                    let minutes = Int(timeDifference / 60)
-                    print("Next Salah in \(minutes) minutes: \(timing.key)")
-                    cache = CachingPolicy(lastAPICallTime: Date(), minutes: 0, data: timings)
-                    return minutes
-                }
-            }
-        } catch {
-            return 0
-        }
-        return 0
+        return nil
     }
 
-//    TODO: adapt it to use network api client, use fetchPrayerTimings2
-    func fetchPrayerTimings(latitude: String, longitude: String) async throws -> [String: String] {
-        let url = URL(string: "https://api.aladhan.com/v1/timings/\(Int(Date().timeIntervalSince1970))?latitude=\(latitude)&longitude=\(longitude)&method=2")!
+    private func minuteToNextSalah(_ timings: Timings) -> PrayTime? {
+        if let nextPrayer = prayerManager.minutesLeftForNextPrayer(timings: timings) {
+            return PrayTime(name: nextPrayer.name, minutes: nextPrayer.minutes)
+        }
+        return nil
+    }
 
-        let (data, _) = try await URLSession.shared.data(from: url)
-        guard
-            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-            let dataDict = json["data"] as? [String: Any],
-            let timings = dataDict["timings"] as? [String: String] else { return [:] }
+    func minutesToPreviousSalah(_ timings: Timings) -> PrayTime? {
+        if let previousPrayer = prayerManager.minutesSincePreviousPrayer(timings: timings) {
+            return PrayTime(name: previousPrayer.name, minutes: previousPrayer.minutes)
+        }
+        return nil
+    }
 
+    func nextSalahTime() async throws -> Int {
+        if let cachedTiming = getLastValidCacheVersion(), let time = minuteToNextSalah(cachedTiming) {
+            return time.minutes
+        }
+        guard let response = try? await fetchPrayerTimes(location), let time = minuteToNextSalah(response)
+        else { return 0 }
+        return time.minutes
+    }
+
+    func fetchPrayerTimes(_ location: MyLocation) async throws -> Timings? {
+        var path = "timings/\(Int(Date().timeIntervalSince1970))?"
+        path += "latitude=\(location.latitude)&longitude=\(location.longitude)&method=2"
+        let response: PrayerTimesJSONResponse = try await network.fetchData(for: EndPoint(path: path))
+        guard let timings = response.data.first?.timings else { return nil }
+        cache = .init(lastAPICallTime: Date(), prayerTimes: timings)
         return timings
-    }
-
-    func fetchPrayerTimings2(latitude: String, longitude: String) async throws -> PrayerTimesJSONResponse {
-        try await network.fetchData(for:
-            .init(path: "timings/\(Int(Date().timeIntervalSince1970))?latitude=\(latitude)&longitude=\(longitude)&method=2")) as PrayerTimesJSONResponse
     }
 }
 
-/// should fetch salah after 5 minutes
-struct CachingPolicy {
-    let lastAPICallTime: Date
-    let minutes: Int
-    let data: [String: String] // TODO: should be adjusted to contian PrayerTimesJSONResponse
+struct MyLocation {
+    let latitude: Double, longitude: Double
 }

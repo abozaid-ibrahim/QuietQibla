@@ -11,7 +11,7 @@ import MapKit
 
 final class LocationListener: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
-    let mosqueFinder = LocationMosqueFinder(mosqueRadius: 200)
+    let mosqueFinder = LocationMosqueFinder(mosqueRadius: 100)
     static let shared = LocationListener()
     private let schedular = TimeSchedular()
 

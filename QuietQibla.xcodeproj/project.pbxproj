@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6C55FCD12BB624A8006C9020 /* LocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55FCD02BB624A8006C9020 /* LocationUpdate.swift */; };
+		6C55FCD32BB6342A006C9020 /* CachingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55FCD22BB6342A006C9020 /* CachingPolicy.swift */; };
+		6C55FCD52BB63574006C9020 /* PrayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55FCD42BB63574006C9020 /* PrayerManager.swift */; };
+		6C55FCD72BB6358A006C9020 /* PrayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55FCD62BB6358A006C9020 /* PrayTime.swift */; };
 		6C581E162BB2A3130095DE84 /* ModeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E152BB2A3130095DE84 /* ModeChanger.swift */; };
 		6C581E182BB2A33A0095DE84 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E172BB2A33A0095DE84 /* LocationListener.swift */; };
 		6C581E1A2BB2A3500095DE84 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C581E192BB2A3500095DE84 /* LocationManager.swift */; };
@@ -65,6 +68,9 @@
 
 /* Begin PBXFileReference section */
 		6C55FCD02BB624A8006C9020 /* LocationUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUpdate.swift; sourceTree = "<group>"; };
+		6C55FCD22BB6342A006C9020 /* CachingPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPolicy.swift; sourceTree = "<group>"; };
+		6C55FCD42BB63574006C9020 /* PrayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerManager.swift; sourceTree = "<group>"; };
+		6C55FCD62BB6358A006C9020 /* PrayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTime.swift; sourceTree = "<group>"; };
 		6C581E152BB2A3130095DE84 /* ModeChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChanger.swift; sourceTree = "<group>"; };
 		6C581E172BB2A33A0095DE84 /* LocationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
 		6C581E192BB2A3500095DE84 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -258,8 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				6C8C28012BB51F8100B1E162 /* PrayerTimes.swift */,
+				6C55FCD42BB63574006C9020 /* PrayerManager.swift */,
 				6C8C27F92BB51CF300B1E162 /* TimeSchedular.swift */,
 				6C8C28172BB5D4C700B1E162 /* PrayerTimesJsonResponse.swift */,
+				6C55FCD22BB6342A006C9020 /* CachingPolicy.swift */,
+				6C55FCD62BB6358A006C9020 /* PrayTime.swift */,
 			);
 			path = PrayerTimes;
 			sourceTree = "<group>";
@@ -513,12 +522,15 @@
 				6C8C27FA2BB51CF300B1E162 /* TimeSchedular.swift in Sources */,
 				6C8C281B2BB5E11700B1E162 /* ThemeManager.swift in Sources */,
 				6C8C27F62BB2FC5A00B1E162 /* LocalNotification.swift in Sources */,
+				6C55FCD52BB63574006C9020 /* PrayerManager.swift in Sources */,
 				6C8C28122BB5D11F00B1E162 /* CoreDateCaching.swift in Sources */,
 				6C581E182BB2A33A0095DE84 /* LocationListener.swift in Sources */,
 				6C8C28142BB5D13900B1E162 /* UserDefaultsLocationRepository.swift in Sources */,
 				6C8C280B2BB5C87200B1E162 /* LoadingDataState.swift in Sources */,
 				6C8C28042BB524FF00B1E162 /* SilentModeToggler.swift in Sources */,
 				6C8C28022BB51F8100B1E162 /* PrayerTimes.swift in Sources */,
+				6C55FCD72BB6358A006C9020 /* PrayTime.swift in Sources */,
+				6C55FCD32BB6342A006C9020 /* CachingPolicy.swift in Sources */,
 				6C581E1C2BB2A36E0095DE84 /* MosqueItem.swift in Sources */,
 				6C8C27E32BB2A9D100B1E162 /* FeatureFlag.swift in Sources */,
 				6C581E242BB2A3C20095DE84 /* MosqueListView.swift in Sources */,
